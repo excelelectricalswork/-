@@ -3,7 +3,6 @@
 <head>
 <title>Example.com homepage</title>
 <meta name="google-site-verification" content="z1l_GCFdA3SDy1fuy4dwTMCMZ76GstIOUqAMsWB5c9A" />
-</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Electricals | Motor Winding & Repair Workshop</title>

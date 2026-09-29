@@ -244,7 +244,7 @@
 
         .btn-email {
             background: rgba(15, 23, 42, 0.9);
-            color: #ffffff;
+            color: #FFD700;
             border: 2px solid #38bdf8;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }

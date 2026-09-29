@@ -26,12 +26,12 @@
         :root {
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
-            --gold-border: rgba(255, 255, 255, 0.4);
+            --gold-border: rgba(255, 255, 255, 0.2);
             --text-dark: #ffffff;
             --text-muted: #e2e8f0;
         }
 
-        /* DIRECT FULL-SCREEN BACKGROUND IMAGE WITH URL ENCODING (%20 FOR SPACE) */
+        /* FULL-SCREEN BACKGROUND IMAGE (motor wind..webp) */
         html, body {
             width: 100%;
             margin: 0;
@@ -39,7 +39,9 @@
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #000000;
-            background-image: url('motor%20wind.webp');
+            
+            /* EXACT REPOSITORY FILE LINK WITH %20 FOR SPACE AND DOUBLE DOTS */
+            background-image: url('motor%20wind..webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -60,7 +62,7 @@
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(12px);
             padding: 16px 5%;
             position: fixed;
@@ -140,7 +142,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--gold-accent);
             color: #fef08a;
             padding: 8px 18px;
@@ -157,7 +159,7 @@
             margin-bottom: 20px;
             font-weight: 800;
             letter-spacing: -1.2px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
         }
 
         .hero h1 span {
@@ -171,7 +173,7 @@
             max-width: 600px;
             line-height: 1.65;
             font-weight: 600;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
 
         .hero-buttons {
@@ -205,7 +207,7 @@
         }
 
         .btn-outline {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             color: #ffffff;
             border: 2px solid rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(6px);
@@ -223,7 +225,7 @@
             object-fit: cover;
             border-radius: 28px;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
         /* SECTION STYLING */
@@ -255,10 +257,10 @@
             font-size: 2.4rem;
             letter-spacing: -0.8px;
             margin: 0;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.9);
         }
 
-        /* GRID CARDS (TRANSPARENT WITH BLUR) */
+        /* GRID CARDS (SEMI-TRANSPARENT WITH BLUR EFFECT) */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -267,18 +269,18 @@
         }
 
         .card {
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.55);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.35s ease;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
         }
 
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--gold-accent);
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.75);
         }
 
         .card img {
@@ -317,7 +319,7 @@
 
         /* ABOUT SECTION */
         .about-card {
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.55);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 40px;
@@ -325,7 +327,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
         }
 
         .about-features {
@@ -356,11 +358,11 @@
         }
 
         .form-card {
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.55);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 35px;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(8px);
         }
 
         .form-group {
@@ -407,7 +409,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 10px 24px;
@@ -440,7 +442,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(0, 0, 0, 0.65);
+            background: rgba(0, 0, 0, 0.75);
         }
 
         .rating-badge {

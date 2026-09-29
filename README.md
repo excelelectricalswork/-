@@ -1,382 +1,32 @@
-<http>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Example.com homepage</title>
-<meta name="google-site-verification" content="z1l_GCFdA3SDy1fuy4dwTMCMZ76GstIOUqAMsWB5c9A" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Electricals | Motor Winding & Repair Workshop</title>
+    
+    <!-- Google Tag Manager / Analytics Scripts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16970635311"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-16970635311');
 
-    <style>
-        /* RESET & BASE STYLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        /* Location & Reviews Styling */
-.reviews-section, .location-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.overall-rating {
-  margin: 10px 0 30px;
-  font-size: 1.1rem;
-}
-
-.rating-score {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #f39c12;
-}
-
-.reviews-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.review-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  width: 280px;
-  text-align: left;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.review-card .stars {
-  margin-bottom: 10px;
-}
-
-.review-card .customer-name {
-  margin-top: 15px;
-  font-weight: 600;
-  color: #555;
-}
-
-.map-container iframe {
-  border-radius: 8px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-
-        body {
-            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-            background-color: #080a0d;
-            color: #f0f6fc;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background: #0d1117;
-            padding: 15px 7%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #252b33;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #ffbd08;
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-        nav a {
-            color: #c9d1d9;
-            margin-left: 20px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffbd08;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 7%;
-            background: radial-gradient(circle at top right, #161b22, #080a0d);
-            gap: 30px;
-        }
-
-        .hero-content {
-            flex: 1 1 450px;
-        }
-
-        .hero-content h1 {
-            font-size: 38px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .hero-content h1 span {
-            color: #ffbd08;
-        }
-
-        .hero-content p {
-            color: #8b949e;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .button {
-            background-color: #ffbd08;
-            color: #0d1117;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 700;
-            display: inline-block;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .button:hover {
-            background-color: #e5a800;
-            transform: translateY(-2px);
-        }
-
-        .button-secondary {
-            background-color: #21262d;
-            color: #f0f6fc;
-            border: 1px solid #30363d;
-        }
-
-        .button-secondary:hover {
-            background-color: #30363d;
-        }
-
-        /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
-.hero-image {
-    flex: 1 1 350px;
-    max-width: 450px; /* Limits how wide the image box can stretch on desktop */
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #30363d;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 380px; /* Sets a consistent height on desktop */
-    object-fit: cover; /* Crops and fills the box cleanly without black space */
-    object-position: center;
-    display: block;
-}
-
-        /* SECTIONS COMMON */
-        section {
-            padding: 60px 7%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title small {
-            color: #ffbd08;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-            margin-top: 5px;
-        }
-
-        .section-title p {
-            color: #8b949e;
-        }
-
-        /* GALLERY & CARDS */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .motor-card {
-            background: #151a21;
-            border: 1px solid #252b33;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .motor-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .motor-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .motor-info {
-            padding: 20px;
-        }
-
-        .motor-info h3 {
-            color: #ffbd08;
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
-
-        .motor-info p {
-            color: #8b949e;
-            font-size: 14px;
-        }
-
-        /* WINDING SECTION */
-        .winding-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 300px;
-            border: 1px solid #252b33;
-        }
-
-        .winding-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .winding-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 40px 20px 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
-        }
-
-        .winding-text h3 {
-            color: #ffbd08;
-            font-size: 22px;
-        }
-
-        .winding-text p {
-            color: #ddd;
-            font-size: 14px;
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            background: #0d1117;
-            border-top: 1px solid #252b33;
-            border-bottom: 1px solid #252b33;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .service {
-            padding: 25px;
-            background: #151a21;
-            border: 1px solid #252b33;
-            border-radius: 8px;
-        }
-
-        .service h3 {
-            color: #ffbd08;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .service p {
-            color: #8b949e;
-            font-size: 14px;
-        }
-
-        /* CONTACT & FOOTER */
-        .contact {
-            text-align: center;
-            background: #080a0d;
-        }
-
-        .contact p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #c9d1d9;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        footer {
-            background: #0d1117;
-            padding: 25px 7%;
-            text-align: center;
-            border-top: 1px solid #252b33;
-            color: #8b949e;
-            font-size: 14px;
-        }
-
-        footer span {
-            color: #ffbd08;
-            font-weight: 700;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav a {
-                margin: 0 10px;
-            }
-
-            .hero-content h1 {
-                font-size: 30px;
-            }
-        }
-    </style>
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/svaUCJPdiiAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/gFXNCJbdiIAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/30c6CJndiIAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/Rkt9CJ_diIAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/9YNCCKLdiIAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/2D1DCMzYjoAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/QemqCM_YjoAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/QtcHCNLYjoAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/arrGCNXYjoAdEK-wnZw_'});
+        gtag('event', 'conversion', {'send_to': 'AW-16970635311/Ruo2CNjYjoAdEK-wnZw_'});
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
     <!-- HEADER -->
@@ -387,7 +37,10 @@
             <a href="#motors">Motors</a>
             <a href="#winding">Winding</a>
             <a href="#services">Services</a>
+            <a href="#directMsgForm">Service Request</a>
             <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#terms">Terms</a>
         </nav>
     </header>
 
@@ -395,28 +48,28 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>ELECTRIC MOTOR <span>WINDING & REPAIR</span></h1>
-            <p>Professional motor winding, stator rewinding, rotor servicing, and component replacements in Choondy, Aluva.</p><span class="rating-score">4.9</span><span class="stars">⭐⭐⭐⭐⭐</span><span class="total-reviews">(Google Verified Reviews)</span>
-            </div>
+            <p>Professional motor winding, stator rewinding, rotor servicing, and component replacement.</p>
             <div class="hero-buttons">
-                <a class="button" href="tel:+918590259451"> 📞 CALL NOW </a> 
-                <a class="button" href="https://wa.me/918590259451" target="_blank">WhatsApp 💬</a>
-                <a class="button" href="mailto:excelelectricalswork@gmail.com">Email</a>
+                <a href="tel:+919876543210" class="button">CALL NOW</a>
+                <a href="https://wa.me/919876543210" class="button button-secondary">WhatsApp</a>
+                <a href="mailto:info@excelelectricals.co.in" class="button button-secondary">Email</a>
             </div>
+        </div>
         <div class="hero-image">
-            <img src="75%20Hp.webp" alt="75 HP Motor"> 
+            <img src="25 Hp.jpg" alt="Motor Winding Workshop">
         </div>
     </section>
 
     <!-- MOTOR GALLERY -->
     <section class="motor-gallery" id="motors">
         <div class="section-title">
-            <small>ELECTRIC MOTOR</small>
+            <small class="section-title small">ELECTRIC MOTOR</small>
             <h2>Motor Pictures</h2>
             <p>Electric motors, stators, rotors, and motor parts serviced at our workshop.</p>
         </div>
         <div class="grid-container">
             <div class="motor-card">
-                <img src="Inducton%20motor.webp" alt="Induction Motor Repair">
+                <img src="Inducton motor.webp" alt="Induction Motor Repair">
                 <div class="motor-info">
                     <h3>Induction Motor</h3>
                     <p>Electric motor repair and electrical maintenance.</p>
@@ -430,14 +83,14 @@
                 </div>
             </div>
             <div class="motor-card">
-                <img src="Field%20Winding.webp" alt="Field Winding Stator">
+                <img src="Field Winding.webp" alt="Field Winding Stator">
                 <div class="motor-info">
                     <h3>Motor Stator</h3>
                     <p>Stator coil rewinding and electrical component testing.</p>
                 </div>
             </div>
             <div class="motor-card">
-                <img src="Ex%20Rotor%20winding.webp" alt="Rotor Winding Repair">
+                <img src="repair motor.webp" alt="Motor Components Repair">
                 <div class="motor-info">
                     <h3>Motor Components</h3>
                     <p>Rotor repair, bearing fitting, and parts replacement.</p>
@@ -449,20 +102,20 @@
     <!-- WINDING SECTION -->
     <section class="winding" id="winding">
         <div class="section-title">
-            <small>WINDING & REWINDING</small>
+            <small class="section-title small">WINDING & REWINDING</small>
             <h2>Motor Winding Services</h2>
             <p>High-quality copper wire rewinding for single-phase and three-phase industrial motors.</p>
         </div>
         <div class="grid-container">
             <div class="winding-card">
-                <img src="Field%20Winding.webp" alt="Stator Winding Work">
+                <img src="Field Winding.webp" alt="Stator Winding Work">
                 <div class="winding-text">
                     <h3>Stator Rewinding</h3>
                     <p>Precision stator coil winding with high-grade insulation.</p>
                 </div>
             </div>
             <div class="winding-card">
-                <img src="Ex%20Rotor%20winding.webp" alt="Rotor Rewinding Work">
+                <img src="Ex Rotor winding.webp" alt="Rotor Rewinding Work">
                 <div class="winding-text">
                     <h3>Rotor Winding</h3>
                     <p>Expert electrical motor rewinding and testing.</p>
@@ -474,7 +127,7 @@
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="section-title">
-            <small>OUR SERVICES</small>
+            <small class="section-title small">OUR SERVICES</small>
             <h2>Workshop Services</h2>
             <p>Comprehensive electrical and mechanical repair solutions.</p>
         </div>
@@ -488,7 +141,7 @@
                 <p>Complete electrical and mechanical motor troubleshooting and overhaul.</p>
             </div>
             <div class="service">
-                <h3>🔄 Bearing Change</h3>
+                <h3>⚙️ Bearing Change</h3>
                 <p>Precision bearing inspection, removal, and replacement.</p>
             </div>
             <div class="service">
@@ -500,58 +153,126 @@
                 <p>Stator core cleaning, re-varnishing, and coil insulation repair.</p>
             </div>
             <div class="service">
-                <h3>⚙️ Motor Parts Fitting</h3>
+                <h3>🔧 Motor Parts Fitting</h3>
                 <p>Replacement of fans, terminal boxes, shafts, and end covers.</p>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT & LOCATION -->
     <section class="contact" id="contact">
         <div class="section-title">
-            <small>GET IN TOUCH</small>
+            <small class="section-title small">GET IN TOUCH</small>
             <h2>Contact Excel Electricals</h2>
+            <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
         </div>
-        <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
         <div class="contact-buttons">
-            <a class="button" href="tel:+918590259451"> 📞 CALL NOW </a> 
-            <a class="button" href="https://wa.me/918590259451" target="_blank"> WhatsApp💬</a>
-            <a class="button" href="mailto:excelelectricalswork@gmail.com"> Email</a>
+            <a href="tel:+919876543210" class="button">CALL NOW</a>
+            <a href="https://wa.me/919876543210" class="button button-secondary">WhatsApp</a>
+            <a href="mailto:info@excelelectricals.co.in" class="button button-secondary">Email</a>
+        </div>
+
+        <h3>OUR LOCATION</h3>
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Excel%20Electricals,%20Choondy,%20Aluva&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-    <!-- LOCATION MAP SECTION -->
-<section id="location" class="location-section">
-  <div class="section-title">
-    <h2>OUR LOCATION</h2>
-  </div>
-  <div class="map-container">
-    <!-- Replace the src below with your copied Google Maps iframe link -->
-    <iframe 
-      src="https://maps.google.com/maps?q=Excel%20Electricals,%20Choondy,%20Aluva&t=&z=15&ie=UTF8&iwloc=&output=embed"  
-      width="100%" 
-      height="350" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-<!-- SINGLE CLEAN REVIEWS SECTION -->
-<section id="reviews" class="reviews-section">
-  <div class="section-title">
-    <h2>CUSTOMER REVIEWS</h2>
-    <div class="overall-rating">
-      <span class="rating-score">4.9</span>
-      <span class="stars">⭐⭐⭐⭐⭐</span>
-      <span class="total-reviews">(Google Verified Reviews)</span>
-    </div>
-  </div>
-</section>
-    <!-- FOOTER -->
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <h2>ABOUT EXCEL ELECTRICALS</h2>
+        <p>Located in Choondy, Aluva, Excel Electricals is a trusted workshop specializing in high-quality electric motor repair, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver reliable, and durable repair solutions for industrial, commercial, and residential motors.</p>
+    </section>
+
+    <!-- SERVICE REQUEST FORM -->
+    <section class="service-request">
+        <h2>SERVICE REQUEST</h2>
+        <form id="directMsgForm">
+            <!-- Access Key for Web3Forms -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            
+            <div>
+                <label style="display: block; margin-bottom: 5px; color: #fff;">Your Name</label>
+                <input type="text" name="name" required placeholder="Enter full name" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 5px; color: #fff;">Phone Number</label>
+                <input type="tel" name="phone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; margin-bottom: 15px;">
+            </div>
+            <div>
+                <label style="display: block; margin-bottom: 5px; color: #fff;">Motor / Repair Details</label>
+                <textarea name="message" rows="3" required placeholder="Enter repair details..." style="width: 100%; padding: 10px; margin-bottom: 15px;"></textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn" style="width: 100%; padding: 12px; background: #ffcc00; color: #000; font-weight: bold; cursor: pointer; border: none;">SEND MESSAGE</button>
+            <div id="formStatus" style="display: none; margin-top: 10px; text-align: center;"></div>
+        </form>
+    </section>
+
+    <!-- TERMS & CONDITIONS -->
+    <section class="terms" id="terms">
+        <h2>TERMS & CONDITIONS</h2>
+        <ul>
+            <li><strong>Inspection & Estimates:</strong> Initial motor diagnosis is provided upon receipt at our workshop in Choondy, Aluva. Final service charges may vary depending on wire gauge, copper weights, and parts replaced.</li>
+            <li><strong>Warranty:</strong> Rewinding work carries a limited service warranty covering manufacturing defect in copper/insulation work. Damage from phase loss, voltage fluctuations, dry running, or water entry is excluded.</li>
+            <li><strong>Delivery & Collection:</strong> Repaired equipment must be picked up within 30 days of completion notification unless prior arrangements are made.</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER / CUSTOMER REVIEWS -->
     <footer>
-        <p>© 2026 <span>EXCEL ELECTRICALS</span> | GSTIN: 32AAGPX3837Q1ZZ</p>
+        <div class="reviews-section">
+            <h3>CUSTOMER REVIEWS</h3>
+            <p class="overall-rating">4.9 <span class="rating-score">★★★★★</span> (Google Verified Reviews)</p>
+        </div>
+        <p>&copy; 2026 EXCEL ELECTRICALS | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
+    <!-- Web3Forms Form Submission Script -->
+    <script>
+        const form = document.getElementById('directMsgForm');
+        const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+                if (response.status === 200) {
+                    statusDiv.style.display = "block";
+                    statusDiv.style.color = "#28a745";
+                    statusDiv.innerText = "✔️ Request submitted successfully! We will contact you back shortly.";
+                    form.reset();
+                } else {
+                    statusDiv.style.display = "block";
+                    statusDiv.style.color = "#dc3545";
+                    statusDiv.innerText = "✖️ " + (result.message || "Something went wrong.");
+                }
+            } catch (error) {
+                statusDiv.style.display = "block";
+                statusDiv.style.color = "#dc3545";
+                statusDiv.innerText = "✖️ Something went wrong. Please try again.";
+            } finally {
+                submitBtn.innerText = "SEND MESSAGE";
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -930,7 +930,7 @@
         <div style="max-width: 650px; margin: 0 auto;">
             <div class="form-card">
                 <form id="directMsgForm">
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                   <input type="hidden" name="access_key" value="823e3a3d-8f8f-474a-ba21-2c91b05bee2a">
                     <div class="form-group">
                         <label>Your Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter full name" required>

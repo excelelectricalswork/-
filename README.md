@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,12 +26,14 @@
         :root {
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
-            --gold-border: rgba(255, 255, 255, 0.2);
-            --text-dark: #ffffff;
-            --text-muted: #e2e8f0;
+            --gold-bright: #fbbf24;
+            --card-bg: rgba(15, 23, 42, 0.88);
+            --card-border: rgba(245, 158, 11, 0.4);
+            --text-main: #ffffff;
+            --text-sub: #cbd5e1;
         }
 
-        /* FULL-SCREEN BACKGROUND IMAGE (motor wind..webp) */
+        /* FULL SCREEN FIXED BACKGROUND WITH OVERLAY FOR HIGH VISIBILITY */
         html, body {
             width: 100%;
             margin: 0;
@@ -39,9 +41,9 @@
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #000000;
-            
-            /* EXACT REPOSITORY FILE LINK WITH %20 FOR SPACE AND DOUBLE DOTS */
-            background-image: url('motor%20wind..webp');
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('motor%20wind..webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -53,6 +55,7 @@
         h1, h2, h3, h4, .brand-text {
             font-family: 'Space Grotesk', sans-serif;
             color: #ffffff;
+            text-shadow: 0 3px 12px rgba(0,0,0,0.9);
         }
 
         * {
@@ -62,40 +65,42 @@
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(10, 15, 29, 0.95);
             backdrop-filter: blur(12px);
             padding: 16px 5%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 2px solid var(--gold-primary);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.8);
         }
 
         .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #ffffff;
             text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .brand-icon {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.5);
+            color: #000;
+            font-size: 1.3rem;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
         }
 
         nav {
@@ -108,21 +113,23 @@
             text-decoration: none;
             color: #ffffff;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             transition: all 0.25s ease;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         nav a:hover {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
         }
 
         .nav-btn {
-            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
-            color: #fff !important;
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
+            color: #000000 !important;
             padding: 10px 22px;
             border-radius: 50px;
-            font-weight: 700 !important;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+            font-weight: 800 !important;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+            text-shadow: none !important;
         }
 
         /* HERO SECTION */
@@ -131,7 +138,7 @@
             z-index: 1;
             width: 100%;
             min-height: 90vh;
-            padding: 130px 5% 60px 5%;
+            padding: 140px 5% 60px 5%;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 50px;
@@ -142,15 +149,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--gold-accent);
-            color: #fef08a;
+            background: rgba(0, 0, 0, 0.85);
+            border: 1.5px solid var(--gold-bright);
+            color: var(--gold-bright);
             padding: 8px 18px;
             border-radius: 50px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 800;
             margin-bottom: 22px;
-            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .hero h1 {
@@ -158,22 +165,23 @@
             line-height: 1.15;
             margin-bottom: 20px;
             font-weight: 800;
-            letter-spacing: -1.2px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,1);
         }
 
         .hero h1 span {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
+            text-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
         }
 
         .hero p {
-            font-size: 1.15rem;
-            color: #f1f5f9;
+            font-size: 1.2rem;
+            color: #f8fafc;
             margin-bottom: 35px;
             max-width: 600px;
             line-height: 1.65;
             font-weight: 600;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            text-shadow: 0 2px 10px rgba(0,0,0,1);
         }
 
         .hero-buttons {
@@ -186,10 +194,10 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 30px;
+            padding: 15px 32px;
             border-radius: 14px;
-            font-weight: 700;
-            font-size: 0.98rem;
+            font-weight: 800;
+            font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -197,25 +205,26 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
-            color: #fff;
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
+            color: #000000;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.7);
         }
 
         .btn-outline {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(15, 23, 42, 0.9);
             color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(6px);
+            border: 2px solid var(--gold-bright);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .btn-outline:hover {
-            border-color: var(--gold-accent);
-            color: var(--gold-accent);
+            background: var(--gold-bright);
+            color: #000000;
             transform: translateY(-3px);
         }
 
@@ -223,9 +232,9 @@
             width: 100%;
             height: 450px;
             object-fit: cover;
-            border-radius: 28px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border-radius: 24px;
+            border: 3px solid var(--gold-border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
         }
 
         /* SECTION STYLING */
@@ -244,23 +253,24 @@
         }
 
         .section-header small {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: block;
             margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0,0,0,1);
         }
 
         .section-header h2 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             letter-spacing: -0.8px;
             margin: 0;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.9);
+            text-shadow: 0 4px 15px rgba(0,0,0,1);
         }
 
-        /* GRID CARDS (SEMI-TRANSPARENT WITH BLUR EFFECT) */
+        /* HIGHLIGHTED CARDS WITH SOLID CONTRAST */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -269,24 +279,26 @@
         }
 
         .card {
-            background: rgba(0, 0, 0, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.35s ease;
-            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: var(--gold-accent);
-            background: rgba(0, 0, 0, 0.75);
+            border-color: var(--gold-bright);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.3);
         }
 
         .card img {
             width: 100%;
-            height: 230px;
+            height: 240px;
             object-fit: cover;
+            border-bottom: 2px solid var(--card-border);
         }
 
         .card-body {
@@ -294,40 +306,44 @@
         }
 
         .card-body h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .card-body p {
-            color: var(--text-muted);
-            font-size: 0.92rem;
+            color: var(--text-sub);
+            font-size: 0.98rem;
             line-height: 1.6;
+            font-weight: 500;
         }
 
         .service-icon {
-            width: 52px;
-            height: 52px;
-            background: rgba(245, 158, 11, 0.25);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-accent);
-            font-size: 1.4rem;
+            color: #000000;
+            font-size: 1.5rem;
             margin-bottom: 18px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
         }
 
         /* ABOUT SECTION */
         .about-card {
-            background: rgba(0, 0, 0, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
             border-radius: 24px;
             padding: 40px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .about-features {
@@ -337,16 +353,18 @@
         }
 
         .about-features li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
+            gap: 12px;
+            color: var(--text-sub);
             font-weight: 700;
+            font-size: 1.05rem;
         }
 
         .about-features i {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
+            font-size: 1.2rem;
         }
 
         /* CONTACTS & SERVICE REQUEST */
@@ -358,11 +376,12 @@
         }
 
         .form-card {
-            background: rgba(0, 0, 0, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
             border-radius: 24px;
             padding: 35px;
-            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .form-group {
@@ -372,35 +391,36 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             color: #ffffff;
             font-weight: 700;
         }
 
         .form-control {
             width: 100%;
-            padding: 14px 16px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            color: #000;
+            padding: 15px 18px;
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            color: #000000;
             font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-weight: 600;
             transition: all 0.25s ease;
         }
 
         .form-control:focus {
             outline: none;
-            background: #ffffff;
-            border-color: var(--gold-accent);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4);
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.4);
         }
 
         .map-card {
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--card-border);
             min-height: 420px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
         /* FLOATING ACTION BAR */
@@ -409,15 +429,16 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 15, 29, 0.95);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px 24px;
+            border: 2px solid var(--gold-bright);
+            padding: 12px 28px;
             border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             z-index: 999;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
         }
 
         .float-link {
@@ -426,12 +447,12 @@
             gap: 8px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-size: 0.98rem;
+            font-weight: 800;
         }
 
         .float-gold {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
         }
 
         /* FOOTER */
@@ -439,26 +460,26 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 2px solid var(--gold-primary);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(10, 15, 29, 0.95);
         }
 
         .rating-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--gold-bright);
             padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .stars {
-            color: var(--gold-accent);
+            color: var(--gold-bright);
         }
 
         /* RESPONSIVE */
@@ -466,7 +487,7 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding-top: 110px;
+                padding-top: 120px;
             }
             .hero p {
                 margin: 0 auto 30px auto;
@@ -595,8 +616,8 @@
         </div>
         <div class="about-card">
             <div>
-                <h3 style="font-size: 1.6rem; margin-bottom: 15px;">Dedicated Motor Winding Specialist</h3>
-                <p style="color: var(--text-muted); line-height: 1.7;">Excel Electricals provides fast, trusted, and durable motor winding solutions for industrial machines, domestic pumps, and commercial equipment in Choondy, Aluva.</p>
+                <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Dedicated Motor Winding Specialist</h3>
+                <p style="color: var(--text-sub); line-height: 1.7; font-size: 1.05rem;">Excel Electricals provides fast, trusted, and durable motor winding solutions for industrial machines, domestic pumps, and commercial equipment in Choondy, Aluva.</p>
                 <ul class="about-features">
                     <li><i class="fa-solid fa-circle-check"></i> 100% Super Enameled Copper Wire</li>
                     <li><i class="fa-solid fa-circle-check"></i> Fast Turnaround & Emergency Support</li>
@@ -604,7 +625,7 @@
                 </ul>
             </div>
             <div>
-                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 16px;">
+                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 280px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
             </div>
         </div>
     </section>
@@ -616,33 +637,33 @@
             <h2>Contact & Location</h2>
         </div>
         <div class="contact-grid">
-            <div class="form-card" style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
-                <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="form-card" style="display: flex; flex-direction: column; justify-content: center; gap: 24px;">
+                <div style="display: flex; align-items: center; gap: 18px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-location-dot"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px;">Workshop Location</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Choondy, Edathala, Aluva, Ernakulam, Kerala</p>
+                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Workshop Location</h4>
+                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">Choondy, Edathala, Aluva, Ernakulam, Kerala</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 18px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-phone"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px;">Phone & WhatsApp</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">+91 85902 59451</p>
+                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Phone & WhatsApp</h4>
+                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">+91 85902 59451</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 18px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-envelope"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px;">Email Address</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">excelelectricalswork@gmail.com</p>
+                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Email Address</h4>
+                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">excelelectricalswork@gmail.com</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 18px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-id-card"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px;">GST Registration</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">GSTIN: 32AAGPX3837Q1ZZ</p>
+                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">GST Registration</h4>
+                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">GSTIN: 32AAGPX3837Q1ZZ</p>
                     </div>
                 </div>
             </div>
@@ -661,7 +682,8 @@
         <div style="max-width: 650px; margin: 0 auto;">
             <div class="form-card">
                 <form id="directMsgForm">
-                    <input type="hidden" name="access_key" value="823e3a3d-8f8f-474a-ba21-2c91b05bee2a">
+                    <!-- Replace YOUR_WEB3FORMS_ACCESS_KEY with your actual Web3Forms access key -->
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
                     <div class="form-group">
                         <label>Your Name</label>
                         <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
@@ -677,7 +699,7 @@
                     <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
                         <i class="fa-solid fa-paper-plane"></i> Send Request
                     </button>
-                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 600;"></div>
+                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 700; font-size: 1.05rem;"></div>
                 </form>
             </div>
         </div>
@@ -686,7 +708,7 @@
     <!-- FLOATING QUICK BAR -->
     <div class="floating-bar">
         <a href="tel:+918590259451" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-        <span style="color: rgba(255,255,255,0.3);">|</span>
+        <span style="color: rgba(255,255,255,0.4);">|</span>
         <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
     </div>
 
@@ -695,9 +717,9 @@
         <div class="rating-badge">
             <span style="font-weight: 800; color: #ffffff;">4.9 Rating</span>
             <span class="stars">★★★★★</span>
-            <span style="color: var(--text-muted); font-size: 0.85rem;">Google Verified</span>
+            <span style="color: var(--text-sub); font-size: 0.9rem;">Google Verified</span>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
+        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 600;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
     <!-- Form Script -->

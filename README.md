@@ -705,7 +705,7 @@
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="75 Hp.webp" alt="Electrical Testing & Fault Diagnosis">
+                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Windindg">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">

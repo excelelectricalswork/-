@@ -24,26 +24,27 @@
 
     <style>
         :root {
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --primary-amber: #d97706;
-            --primary-gold: #f59e0b;
-            --accent-blue: #0284c7;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --border-light: #e2e8f0;
-            --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
-            --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --bg-golden-light: #fffdf5;
+            --bg-card: rgba(255, 255, 255, 0.92);
+            --gold-primary: #d97706;
+            --gold-accent: #f59e0b;
+            --gold-soft: #fef3c7;
+            --gold-border: #fde68a;
+            --text-dark: #1e1b18;
+            --text-muted: #57534e;
+            --border-light: #f3f4f6;
+            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.12), 0 4px 12px -2px rgba(245, 158, 11, 0.08);
+            --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.22);
         }
 
-        /* 100% FULL-SCREEN BRIGHT LAYOUT */
+        /* 100% FULL SCREEN BRIGHT LAYOUT */
         html, body {
             width: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
+            background-color: var(--bg-golden-light);
             color: var(--text-dark);
             scroll-behavior: smooth;
         }
@@ -56,25 +57,25 @@
             box-sizing: border-box;
         }
 
-        /* LIGHT & BRIGHT MOTIVATIONAL MESH GRADIENT BACKDROPS */
-        .ambient-glow-1 {
+        /* AMBIENT LIGHT GOLDEN GLOW BACKDROPS */
+        .gold-glow-1 {
             position: fixed;
             top: -10vw;
             right: -10vw;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(245, 158, 11, 0.08) 50%, rgba(255,255,255,0) 70%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(254, 243, 199, 0.7) 0%, rgba(253, 230, 138, 0.2) 50%, rgba(255,255,255,0) 70%);
             pointer-events: none;
             z-index: 0;
         }
 
-        .ambient-glow-2 {
+        .gold-glow-2 {
             position: fixed;
             bottom: -10vw;
             left: -10vw;
-            width: 55vw;
-            height: 55vw;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(255,255,255,0) 70%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(253, 230, 138, 0.4) 0%, rgba(255,255,255,0) 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -82,18 +83,18 @@
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 253, 245, 0.95);
             backdrop-filter: blur(16px);
             padding: 16px 5%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--gold-border);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.05);
         }
 
         .brand-logo {
@@ -109,14 +110,14 @@
         .brand-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
             font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
         }
 
         nav {
@@ -134,11 +135,11 @@
         }
 
         nav a:hover {
-            color: var(--primary-amber);
+            color: var(--gold-primary);
         }
 
         .nav-btn {
-            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
             color: #fff !important;
             padding: 10px 22px;
             border-radius: 50px;
@@ -169,9 +170,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(245, 158, 11, 0.12);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: var(--primary-amber);
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid var(--gold-border);
+            color: var(--gold-primary);
             padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.88rem;
@@ -189,7 +190,7 @@
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--primary-amber), #b45309);
+            background: linear-gradient(135deg, var(--gold-primary), #92400e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -223,7 +224,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
             color: #fff;
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
         }
@@ -234,15 +235,15 @@
         }
 
         .btn-outline {
-            background: var(--bg-white);
+            background: #ffffff;
             color: var(--text-dark);
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--gold-border);
+            box-shadow: var(--shadow-gold);
         }
 
         .btn-outline:hover {
-            border-color: var(--primary-gold);
-            color: var(--primary-amber);
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
             transform: translateY(-3px);
         }
 
@@ -255,8 +256,8 @@
             height: 450px;
             object-fit: cover;
             border-radius: 28px;
-            border: 4px solid var(--bg-white);
-            box-shadow: var(--shadow-card);
+            border: 4px solid #ffffff;
+            box-shadow: var(--shadow-gold);
         }
 
         /* SECTION STYLING */
@@ -275,7 +276,7 @@
         }
 
         .section-header small {
-            color: var(--primary-amber);
+            color: var(--gold-primary);
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -299,18 +300,18 @@
         }
 
         .card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-gold);
             transition: all 0.35s ease;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--gold-primary);
         }
 
         .card img {
@@ -339,23 +340,23 @@
         .service-icon {
             width: 52px;
             height: 52px;
-            background: rgba(245, 158, 11, 0.1);
+            background: rgba(245, 158, 11, 0.15);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-amber);
+            color: var(--gold-primary);
             font-size: 1.4rem;
             margin-bottom: 18px;
         }
 
         /* ABOUT SECTION */
         .about-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
             border-radius: 24px;
             padding: 40px;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-gold);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -365,6 +366,7 @@
         .about-features {
             list-style: none;
             margin-top: 20px;
+            padding: 0;
         }
 
         .about-features li {
@@ -377,7 +379,7 @@
         }
 
         .about-features i {
-            color: var(--primary-amber);
+            color: var(--gold-primary);
         }
 
         /* CONTACTS & SERVICE REQUEST */
@@ -389,11 +391,11 @@
         }
 
         .form-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
             border-radius: 24px;
             padding: 35px;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-gold);
         }
 
         .form-group {
@@ -411,8 +413,8 @@
         .form-control {
             width: 100%;
             padding: 14px 16px;
-            background: var(--bg-light);
-            border: 1px solid var(--border-light);
+            background: #ffffff;
+            border: 1px solid var(--gold-border);
             border-radius: 10px;
             color: var(--text-dark);
             font-family: inherit;
@@ -423,16 +425,16 @@
         .form-control:focus {
             outline: none;
             background: #fff;
-            border-color: var(--primary-amber);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
         }
 
         .map-card {
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--gold-border);
             min-height: 420px;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-gold);
         }
 
         /* FLOATING ACTION BAR */
@@ -441,15 +443,15 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 253, 245, 0.95);
             backdrop-filter: blur(16px);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--gold-border);
             padding: 10px 24px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 18px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
             z-index: 999;
         }
 
@@ -464,7 +466,7 @@
         }
 
         .float-gold {
-            color: var(--primary-amber);
+            color: var(--gold-primary);
         }
 
         /* FOOTER */
@@ -472,18 +474,18 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid var(--gold-border);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: var(--bg-white);
+            background: rgba(255, 253, 245, 0.8);
         }
 
         .rating-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--bg-light);
-            border: 1px solid var(--border-light);
+            background: #ffffff;
+            border: 1px solid var(--gold-border);
             padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
@@ -491,7 +493,7 @@
         }
 
         .stars {
-            color: var(--primary-gold);
+            color: var(--gold-accent);
         }
 
         /* RESPONSIVE */
@@ -518,8 +520,8 @@
 </head>
 <body>
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <div class="gold-glow-1"></div>
+    <div class="gold-glow-2"></div>
 
     <!-- HEADER NAVIGATION -->
     <header>
@@ -541,13 +543,13 @@
     <section class="hero" id="home">
         <div>
             <div class="hero-badge">
-                <i class="fa-solid fa-shield-halved"></i> Certified Workshop • Choondy, Aluva
+                <i class="fa-solid fa-shield-halved"></i> Certified Motor Workshop • Choondy, Aluva
             </div>
             <h1>EXPERT ELECTRIC <span>MOTOR WINDING</span> & REPAIR</h1>
             <p>Reliable stator rewinding, coil replacement, dynamic rotor testing, and complete motor repairs with guaranteed copper quality.</p>
             <div class="hero-buttons">
-                <a href="tel:+919876543210" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-                <a href="https://wa.me/919876543210" class="btn btn-outline"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
+                <a href="tel:+918590259451" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
+                <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
             </div>
         </div>
         <div class="hero-image-box">
@@ -594,7 +596,7 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" style="background: rgba(255,255,255,0.6);">
+    <section id="services">
         <div class="section-header">
             <small>High Quality</small>
             <h2>Our Workshop Services</h2>
@@ -646,7 +648,7 @@
     </section>
 
     <!-- CONTACTS SECTION -->
-    <section id="contacts" style="background: rgba(255,255,255,0.6);">
+    <section id="contacts">
         <div class="section-header">
             <small>Reach Us</small>
             <h2>Contact & Location</h2>
@@ -663,8 +665,15 @@
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-phone"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px;">Phone Call</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">+91 98765 43210</p>
+                        <h4 style="margin-bottom: 4px;">Phone & WhatsApp</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">+91 85902 59451</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">Email Address</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">excelelectricalswork@gmail.com</p>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 15px;">
@@ -714,9 +723,9 @@
 
     <!-- FLOATING QUICK BAR -->
     <div class="floating-bar">
-        <a href="tel:+919876543210" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-        <span style="color: var(--border-light);">|</span>
-        <a href="https://wa.me/919876543210" class="float-link"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
+        <a href="tel:+918590259451" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
+        <span style="color: var(--gold-border);">|</span>
+        <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
     </div>
 
     <!-- FOOTER -->

@@ -33,9 +33,10 @@
             --text-sub: #cbd5e1;
         }
 
-        /* FULL SCREEN FIXED BACKGROUND WITH OVERLAY FOR HIGH VISIBILITY */
+        /* FULL SCREEN RESPONSIVE BACKGROUND IMAGE */
         html, body {
             width: 100%;
+            min-height: 100vh;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -62,7 +63,7 @@
             box-sizing: border-box;
         }
 
-        /* HEADER NAVIGATION */
+        /* HEADER & NAVIGATION */
         header {
             width: 100%;
             background: rgba(10, 15, 29, 0.95);
@@ -132,6 +133,19 @@
             text-shadow: none !important;
         }
 
+        /* MOBILE MENU TOGGLE BUTTON */
+        .mobile-toggle {
+            display: none;
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
+            color: #000000;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+
         /* HERO SECTION */
         .hero {
             position: relative;
@@ -161,7 +175,7 @@
         }
 
         .hero h1 {
-            font-size: 3.6rem;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
             line-height: 1.15;
             margin-bottom: 20px;
             font-weight: 800;
@@ -175,7 +189,7 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             color: #f8fafc;
             margin-bottom: 35px;
             max-width: 600px;
@@ -230,19 +244,20 @@
 
         .hero-img {
             width: 100%;
-            height: 450px;
+            height: auto;
+            max-height: 450px;
             object-fit: cover;
             border-radius: 24px;
-            border: 3px solid var(--gold-border);
+            border: 3px solid var(--card-border);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
         }
 
-        /* SECTION STYLING */
+        /* SECTIONS */
         section {
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 90px 5%;
+            padding: 80px 5%;
             scroll-margin-top: 70px;
         }
 
@@ -264,16 +279,16 @@
         }
 
         .section-header h2 {
-            font-size: 2.6rem;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
             letter-spacing: -0.8px;
             margin: 0;
             text-shadow: 0 4px 15px rgba(0,0,0,1);
         }
 
-        /* HIGHLIGHTED CARDS WITH SOLID CONTRAST */
+        /* GRID CARDS WITH AUTOMATIC RESPONSIVE FIT */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
             width: 100%;
         }
@@ -296,7 +311,7 @@
 
         .card img {
             width: 100%;
-            height: 240px;
+            height: 220px;
             object-fit: cover;
             border-bottom: 2px solid var(--card-border);
         }
@@ -367,7 +382,7 @@
             font-size: 1.2rem;
         }
 
-        /* CONTACTS & SERVICE REQUEST */
+        /* CONTACTS & FORM */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -419,11 +434,11 @@
             border-radius: 24px;
             overflow: hidden;
             border: 2px solid var(--card-border);
-            min-height: 420px;
+            min-height: 380px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
 
-        /* FLOATING ACTION BAR */
+        /* FLOATING QUICK BAR */
         .floating-bar {
             position: fixed;
             bottom: 20px;
@@ -439,6 +454,9 @@
             gap: 20px;
             z-index: 999;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            width: max-content;
+            max-width: 90%;
+            justify-content: center;
         }
 
         .float-link {
@@ -447,7 +465,7 @@
             gap: 8px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 800;
         }
 
@@ -461,7 +479,7 @@
             z-index: 1;
             width: 100%;
             border-top: 2px solid var(--gold-primary);
-            padding: 40px 5% 30px 5%;
+            padding: 40px 5% 100px 5%;
             text-align: center;
             background: rgba(10, 15, 29, 0.95);
         }
@@ -482,24 +500,63 @@
             color: var(--gold-bright);
         }
 
-        /* RESPONSIVE */
+        /* AUTOMATIC SCREEN SIZE RESPONSIVE RULES (MOBILE & TABLET) */
         @media (max-width: 992px) {
+            .mobile-toggle {
+                display: block; /* Show hamburger button on mobile screens */
+            }
+
+            nav {
+                display: none; /* Hide default navbar links on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 15, 29, 0.98);
+                padding: 20px 5%;
+                border-bottom: 2px solid var(--gold-primary);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+                gap: 18px;
+            }
+
+            nav.active {
+                display: flex; /* Open menu when hamburger button is clicked */
+            }
+
+            nav a {
+                font-size: 1.1rem;
+                padding: 10px 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-btn {
+                margin-top: 10px;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
                 padding-top: 120px;
+                gap: 30px;
             }
+
             .hero p {
                 margin: 0 auto 30px auto;
             }
+
             .hero-buttons {
                 justify-content: center;
             }
+
             .about-card, .contact-grid {
                 grid-template-columns: 1fr;
+                padding: 24px;
             }
-            nav {
-                display: none;
+
+            section {
+                padding: 60px 4%;
             }
         }
     </style>
@@ -512,7 +569,13 @@
             <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
             <span class="brand-text">EXCEL ELECTRICALS</span>
         </a>
-        <nav>
+
+        <!-- Hamburger Toggle Button for Mobile -->
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav id="navMenu">
             <a href="#home">Home</a>
             <a href="#gallery">Gallery</a>
             <a href="#services">Services</a>
@@ -682,7 +745,7 @@
         <div style="max-width: 650px; margin: 0 auto;">
             <div class="form-card">
                 <form id="directMsgForm">
-                    <!-- Replace YOUR_WEB3FORMS_ACCESS_KEY with your actual Web3Forms access key -->
+                    <!-- Replace YOUR_WEB3FORMS_ACCESS_KEY with your Web3Forms key -->
                     <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
                     <div class="form-group">
                         <label>Your Name</label>
@@ -722,8 +785,32 @@
         <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 600;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
-    <!-- Form Script -->
+    <!-- JavaScript for Mobile Menu & Form Submission -->
     <script>
+        // Mobile Navigation Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.className = 'fa-solid fa-xmark';
+            } else {
+                icon.className = 'fa-solid fa-bars';
+            }
+        });
+
+        // Close mobile menu automatically when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) icon.className = 'fa-solid fa-bars';
+            });
+        });
+
+        // Form Handling Script
         const form = document.getElementById('directMsgForm');
         const statusDiv = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');

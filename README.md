@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,29 +24,27 @@
 
     <style>
         :root {
-            --bg-deep: #030712;
-            --bg-card: rgba(17, 24, 39, 0.75);
-            --bg-card-hover: rgba(31, 41, 55, 0.9);
-            --gold-bright: #fbbf24;
-            --gold-glow: #f59e0b;
-            --amber-accent: #ff8c00;
-            --electric-cyan: #38bdf8;
-            --text-main: #f9fafb;
-            --text-sub: #9ca3af;
-            --border-line: rgba(255, 255, 255, 0.12);
-            --border-glow: rgba(251, 191, 36, 0.4);
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --primary-amber: #d97706;
+            --primary-gold: #f59e0b;
+            --accent-blue: #0284c7;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-light: #e2e8f0;
+            --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+            --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
         }
 
-        /* 100% FULL-SCREEN PAGE SETUP */
+        /* 100% FULL-SCREEN BRIGHT LAYOUT */
         html, body {
             width: 100%;
-            height: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
@@ -58,442 +56,415 @@
             box-sizing: border-box;
         }
 
-        /* DYNAMIC MOTIVATING BACKGROUND GLOWS */
-        .glow-overlay-1 {
+        /* LIGHT & BRIGHT MOTIVATIONAL MESH GRADIENT BACKDROPS */
+        .ambient-glow-1 {
             position: fixed;
-            top: -15%;
-            right: -10%;
+            top: -10vw;
+            right: -10vw;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(245, 158, 11, 0.08) 50%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -10vw;
+            left: -10vw;
             width: 55vw;
             height: 55vw;
-            background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, rgba(255, 140, 0, 0.05) 50%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(255,255,255,0) 70%);
             pointer-events: none;
             z-index: 0;
         }
 
-        .glow-overlay-2 {
-            position: fixed;
-            bottom: -20%;
-            left: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(0,0,0,0) 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* FULL WIDTH HEADER & NAV */
+        /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(20px);
-            padding: 18px 5%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            padding: 16px 5%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-line);
+            border-bottom: 1px solid var(--border-light);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .brand-logo {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
+            color: var(--text-dark);
+            text-decoration: none;
         }
 
         .brand-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--gold-bright), var(--amber-accent));
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
+            color: #fff;
             font-size: 1.2rem;
-            box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 24px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text-sub);
+            color: var(--text-muted);
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         nav a:hover {
-            color: var(--gold-bright);
-            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+            color: var(--primary-amber);
         }
 
-        .nav-cta {
-            background: linear-gradient(135deg, var(--gold-bright), var(--amber-accent));
-            color: #000 !important;
-            padding: 10px 24px;
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
+            color: #fff !important;
+            padding: 10px 22px;
             border-radius: 50px;
             font-weight: 700 !important;
-            box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+            transition: transform 0.25s ease, box-shadow 0.25s ease !important;
         }
 
-        .nav-cta:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.45);
         }
 
-        /* FULL-SCREEN HERO SECTION */
-        .hero-section {
+        /* HERO SECTION */
+        .hero {
             position: relative;
             z-index: 1;
             width: 100%;
-            min-height: 100vh;
-            padding: 140px 5% 60px 5%;
+            min-height: 90vh;
+            padding: 130px 5% 60px 5%;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
-        .motivation-tag {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(251, 191, 36, 0.12);
-            border: 1px solid rgba(251, 191, 36, 0.35);
-            color: var(--gold-bright);
-            padding: 8px 20px;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--primary-amber);
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.88rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(251, 191, 36, 0.15);
+            margin-bottom: 22px;
         }
 
-        .hero-section h1 {
-            font-size: 3.8rem;
-            line-height: 1.1;
-            margin-bottom: 24px;
+        .hero h1 {
+            font-size: 3.6rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
             font-weight: 800;
-            letter-spacing: -1.5px;
+            letter-spacing: -1.2px;
+            color: var(--text-dark);
         }
 
-        .hero-section h1 span {
-            background: linear-gradient(135deg, #fbbf24 0%, #ff8c00 100%);
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-amber), #b45309);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
         }
 
-        .hero-section p {
+        .hero p {
             font-size: 1.15rem;
-            color: var(--text-sub);
-            margin-bottom: 40px;
-            max-width: 620px;
-            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 600px;
+            line-height: 1.65;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 18px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .btn-action {
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 34px;
+            gap: 10px;
+            padding: 15px 30px;
             border-radius: 14px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.98rem;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
         }
 
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold-bright), var(--amber-accent));
-            color: #000;
-            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(251, 191, 36, 0.5);
-        }
-
-        .btn-glass {
-            background: rgba(255, 255, 255, 0.06);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-amber));
             color: #fff;
-            border: 1px solid var(--border-line);
-            backdrop-filter: blur(12px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
         }
 
-        .btn-glass:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-4px);
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.45);
         }
 
-        /* HERO DISPLAY CARDS & WIDGETS */
-        .hero-visual {
+        .btn-outline {
+            background: var(--bg-white);
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-amber);
+            transform: translateY(-3px);
+        }
+
+        .hero-image-box {
             position: relative;
-            width: 100%;
         }
 
-        .main-hero-img {
+        .hero-img {
             width: 100%;
-            height: 480px;
+            height: 450px;
             object-fit: cover;
             border-radius: 28px;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(251, 191, 36, 0.15);
+            border: 4px solid var(--bg-white);
+            box-shadow: var(--shadow-card);
         }
 
-        .floating-widget {
-            position: absolute;
-            background: rgba(17, 24, 39, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 20px 26px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            z-index: 2;
-        }
-
-        .widget-1 {
-            bottom: -25px;
-            left: -30px;
-        }
-
-        .widget-2 {
-            top: -20px;
-            right: -20px;
-        }
-
-        .widget-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(251, 191, 36, 0.15);
-            color: var(--gold-bright);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-        }
-
-        .widget-val {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-        }
-
-        .widget-lbl {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            margin-top: 4px;
-        }
-
-        /* FULL SCREEN SECTIONS */
+        /* SECTION STYLING */
         section {
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 100px 5%;
-            scroll-margin-top: 80px;
+            padding: 90px 5%;
+            scroll-margin-top: 70px;
         }
 
         .section-header {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
         }
 
         .section-header small {
-            color: var(--gold-bright);
-            font-weight: 700;
-            letter-spacing: 2.5px;
+            color: var(--primary-amber);
+            font-weight: 800;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .section-header h2 {
-            font-size: 2.6rem;
-            letter-spacing: -1px;
-            color: #fff;
+            font-size: 2.4rem;
+            letter-spacing: -0.8px;
+            color: var(--text-dark);
         }
 
-        /* GRID CARDS & WIDGETS */
+        /* GRID CARDS */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 28px;
             width: 100%;
         }
 
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-line);
-            border-radius: 24px;
+        .card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
             overflow: hidden;
-            backdrop-filter: blur(16px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.35s ease;
         }
 
-        .glass-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--border-glow);
-            background: var(--bg-card-hover);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(251, 191, 36, 0.15);
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-gold);
         }
 
-        .glass-card img {
+        .card img {
             width: 100%;
-            height: 250px;
+            height: 230px;
             object-fit: cover;
-            border-bottom: 1px solid var(--border-line);
         }
 
         .card-body {
-            padding: 28px;
+            padding: 24px;
         }
 
         .card-body h3 {
-            font-size: 1.35rem;
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
         }
 
         .card-body p {
-            color: var(--text-sub);
-            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-size: 0.92rem;
             line-height: 1.6;
         }
 
         /* SERVICES WIDGETS */
-        .service-box {
-            padding: 32px;
-        }
-
         .service-icon {
-            width: 58px;
-            height: 58px;
-            background: rgba(251, 191, 36, 0.12);
-            border: 1px solid rgba(251, 191, 36, 0.25);
-            border-radius: 16px;
+            width: 52px;
+            height: 52px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-bright);
-            font-size: 1.5rem;
-            margin-bottom: 22px;
+            color: var(--primary-amber);
+            font-size: 1.4rem;
+            margin-bottom: 18px;
         }
 
-        /* FORM & MAP CONTAINER */
+        /* ABOUT SECTION */
+        .about-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .about-features i {
+            color: var(--primary-amber);
+        }
+
+        /* CONTACTS & SERVICE REQUEST */
         .contact-grid {
             display: grid;
-            grid-template-columns: 1.1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
             width: 100%;
         }
 
         .form-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-line);
-            border-radius: 28px;
-            padding: 40px;
-            backdrop-filter: blur(16px);
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow-soft);
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: var(--text-sub);
+            font-size: 0.88rem;
+            color: var(--text-dark);
             font-weight: 600;
         }
 
         .form-control {
             width: 100%;
-            padding: 16px 18px;
-            background: rgba(3, 7, 18, 0.7);
-            border: 1px solid var(--border-line);
-            border-radius: 12px;
-            color: #fff;
+            padding: 14px 16px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            color: var(--text-dark);
             font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--gold-bright);
-            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.15);
+            background: #fff;
+            border-color: var(--primary-amber);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
         }
 
         .map-card {
-            border-radius: 28px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 1px solid var(--border-line);
-            min-height: 450px;
+            border: 1px solid var(--border-light);
+            min-height: 420px;
+            box-shadow: var(--shadow-soft);
         }
 
         /* FLOATING ACTION BAR */
         .floating-bar {
             position: fixed;
-            bottom: 25px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(17, 24, 39, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glow);
-            padding: 12px 28px;
-            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-light);
+            padding: 10px 24px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(251, 191, 36, 0.2);
+            gap: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             z-index: 999;
         }
 
         .float-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: #fff;
+            gap: 8px;
+            color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
         }
 
         .float-gold {
-            color: var(--gold-bright);
+            color: var(--primary-amber);
         }
 
         /* FOOTER */
@@ -501,52 +472,42 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            border-top: 1px solid var(--border-line);
-            padding: 50px 5% 35px 5%;
+            border-top: 1px solid var(--border-light);
+            padding: 40px 5% 30px 5%;
             text-align: center;
-            background: #02040a;
+            background: var(--bg-white);
         }
 
         .rating-badge {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-line);
-            padding: 10px 24px;
+            gap: 10px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            padding: 8px 20px;
             border-radius: 50px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
 
         .stars {
-            color: var(--gold-bright);
+            color: var(--primary-gold);
         }
 
-        /* RESPONSIVE LAYOUT */
+        /* RESPONSIVE */
         @media (max-width: 992px) {
-            .hero-section {
+            .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding-top: 120px;
+                padding-top: 110px;
             }
-            .hero-section p {
-                margin: 0 auto 35px auto;
+            .hero p {
+                margin: 0 auto 30px auto;
             }
             .hero-buttons {
                 justify-content: center;
             }
-            .motivation-tag {
-                margin: 0 auto 25px auto;
-            }
-            .floating-widget {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                top: auto;
-                right: auto;
-                margin-top: 15px;
-            }
-            .contact-grid {
+            .about-card, .contact-grid {
                 grid-template-columns: 1fr;
             }
             nav {
@@ -557,145 +518,162 @@
 </head>
 <body>
 
-    <div class="glow-overlay-1"></div>
-    <div class="glow-overlay-2"></div>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
 
-    <!-- HEADER -->
+    <!-- HEADER NAVIGATION -->
     <header>
-        <div class="brand-logo">
+        <a href="#home" class="brand-logo">
             <div class="brand-icon"><i class="fa-solid fa-bolt"></i></div>
             <span class="brand-text">EXCEL ELECTRICALS</span>
-        </div>
+        </a>
         <nav>
             <a href="#home">Home</a>
-            <a href="#motors">Motors</a>
-            <a href="#winding">Winding</a>
+            <a href="#gallery">Gallery</a>
             <a href="#services">Services</a>
             <a href="#about">About</a>
-            <a href="#request" class="nav-cta">Service Request</a>
+            <a href="#contacts">Contacts</a>
+            <a href="#request" class="nav-btn">Service Request</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="home">
+    <!-- HOME HERO SECTION -->
+    <section class="hero" id="home">
         <div>
-            <div class="motivation-tag">
-                <i class="fa-solid fa-fire"></i> POWERING INDUSTRIAL PERFORMANCE • CHOONDY
+            <div class="hero-badge">
+                <i class="fa-solid fa-shield-halved"></i> Certified Workshop • Choondy, Aluva
             </div>
-            <h1>EXPERT MOTOR <span>WINDING & REPAIR</span> WORKSHOP</h1>
-            <p>Precision copper rewinding, stator insulation, rotor dynamic checks, and complete mechanical overhaul for high-torque industrial & domestic electric motors.</p>
+            <h1>EXPERT ELECTRIC <span>MOTOR WINDING</span> & REPAIR</h1>
+            <p>Reliable stator rewinding, coil replacement, dynamic rotor testing, and complete motor repairs with guaranteed copper quality.</p>
             <div class="hero-buttons">
-                <a href="tel:+919876543210" class="btn-action btn-gold"><i class="fa-solid fa-phone"></i> Call Workshop Now</a>
-                <a href="https://wa.me/919876543210" class="btn-action btn-glass"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Message</a>
+                <a href="tel:+919876543210" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
+                <a href="https://wa.me/919876543210" class="btn btn-outline"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <img src="25 Hp.jpg" alt="Motor Winding Workshop" class="main-hero-img">
-            <div class="floating-widget widget-1">
-                <div class="widget-icon"><i class="fa-solid fa-award"></i></div>
-                <div>
-                    <div class="widget-val">100%</div>
-                    <div class="widget-lbl">Copper Quality Assured</div>
+        <div class="hero-image-box">
+            <img src="25 Hp.jpg" alt="Motor Winding Workshop" class="hero-img">
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+        <div class="section-header">
+            <small>Workmanship</small>
+            <h2>Motor Repair Gallery</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <img src="Inducton motor.webp" alt="Induction Motor">
+                <div class="card-body">
+                    <h3>Induction Motor Repair</h3>
+                    <p>Heavy duty single & 3-phase induction motor diagnostic and overhaul.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Motor.webp" alt="Motor Servicing">
+                <div class="card-body">
+                    <h3>Mechanical Overhaul</h3>
+                    <p>Bearing replacement, shaft polish, and dynamic housing alignment.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Field Winding.webp" alt="Stator Rewinding">
+                <div class="card-body">
+                    <h3>Stator Copper Winding</h3>
+                    <p>High-grade dual coated copper wire coil insertion & varnish dipping.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="repair motor.webp" alt="Motor Parts">
+                <div class="card-body">
+                    <h3>Component Servicing</h3>
+                    <p>Capacitors, cooling fan blades, terminal boards, and relay repairs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MOTOR GALLERY -->
-    <section id="motors">
+    <!-- SERVICES SECTION -->
+    <section id="services" style="background: rgba(255,255,255,0.6);">
         <div class="section-header">
-            <small>Precision Engineering</small>
-            <h2>Motor Work Gallery</h2>
+            <small>High Quality</small>
+            <h2>Our Workshop Services</h2>
         </div>
         <div class="cards-grid">
-            <div class="glass-card">
-                <img src="Inducton motor.webp" alt="Induction Motors">
-                <div class="card-body">
-                    <h3>Induction Motors</h3>
-                    <p>Heavy duty single-phase and 3-phase induction motor rewinding & overhaul.</p>
-                </div>
-            </div>
-            <div class="glass-card">
-                <img src="Motor.webp" alt="Mechanical Overhaul">
-                <div class="card-body">
-                    <h3>Mechanical Servicing</h3>
-                    <p>Complete bearing replacements, rotor shaft checks, and cover fitting.</p>
-                </div>
-            </div>
-            <div class="glass-card">
-                <img src="Field Winding.webp" alt="Stator Coil Winding">
-                <div class="card-body">
-                    <h3>Stator Rewinding</h3>
-                    <p>Dual-coated copper wire coil insertion with high-temp insulation varnish.</p>
-                </div>
-            </div>
-            <div class="glass-card">
-                <img src="repair motor.webp" alt="Component Repairs">
-                <div class="card-body">
-                    <h3>Motor Spare Parts</h3>
-                    <p>Capacitor replacements, cooling fan fitments, and terminal block setups.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES WIDGET SECTION -->
-    <section id="services" style="background: rgba(255,255,255,0.01);">
-        <div class="section-header">
-            <small>High Performance</small>
-            <h2>Workshop Services</h2>
-        </div>
-        <div class="cards-grid">
-            <div class="glass-card service-box">
+            <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Stator Rewinding</h3>
-                <p>High-grade copper coil rewinding with top quality insulation paper and dip varnishing.</p>
+                <h3>Copper Rewinding</h3>
+                <p>Complete stator & coil rewinding using premium copper wire and thermal insulation paper.</p>
             </div>
-            <div class="glass-card service-box">
+            <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                <h3>Motor Diagnostics</h3>
-                <p>Megger testing, coil resistance verification, and winding fault troubleshooting.</p>
+                <h3>Electrical Testing</h3>
+                <p>Megger insulation test, fault troubleshooting, and coil balancing checks.</p>
             </div>
-            <div class="glass-card service-box">
+            <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
                 <h3>Bearing Fitting</h3>
-                <p>Precision bearing extraction and installation for vibration-free motor operation.</p>
+                <p>Precision removal and installation of high-speed SKF/NBC motor bearings.</p>
             </div>
-            <div class="glass-card service-box">
+            <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                <h3>Capacitors & Switches</h3>
-                <p>Testing and replacement of run/start capacitors, relays, and centrifugal switches.</p>
+                <h3>Capacitor & Relays</h3>
+                <p>Testing and replacement of start/run capacitors and centrifugal switches.</p>
             </div>
         </div>
     </section>
 
-    <!-- DIRECT SERVICE FORM & MAP -->
-    <section id="request">
+    <!-- ABOUT SECTION -->
+    <section id="about">
         <div class="section-header">
-            <small>Direct Connect</small>
-            <h2>Request Service & Location</h2>
+            <small>Who We Are</small>
+            <h2>About Excel Electricals</h2>
+        </div>
+        <div class="about-card">
+            <div>
+                <h3 style="font-size: 1.6rem; margin-bottom: 15px;">Dedicated Motor Winding Specialist</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Excel Electricals provides fast, trusted, and durable motor winding solutions for industrial machines, domestic pumps, and commercial equipment in Choondy, Aluva.</p>
+                <ul class="about-features">
+                    <li><i class="fa-solid fa-circle-check"></i> 100% Super Enameled Copper Wire</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Fast Turnaround & Emergency Support</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Certified & Tested Before Delivery</li>
+                </ul>
+            </div>
+            <div>
+                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 16px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTS SECTION -->
+    <section id="contacts" style="background: rgba(255,255,255,0.6);">
+        <div class="section-header">
+            <small>Reach Us</small>
+            <h2>Contact & Location</h2>
         </div>
         <div class="contact-grid">
-            <div class="form-card">
-                <form id="directMsgForm">
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter your full name" required>
+            <div class="form-card" style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">Workshop Location</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Choondy, Edathala, Aluva, Ernakulam, Kerala</p>
                     </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="Enter mobile number" required>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">Phone Call</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">+91 98765 43210</p>
                     </div>
-                    <div class="form-group">
-                        <label>Motor Issue / Repair Details</label>
-                        <textarea name="message" rows="4" class="form-control" placeholder="Specify HP, motor type, or issue..." required></textarea>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-id-card"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">GST Registration</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">GSTIN: 32AAGPX3837Q1ZZ</p>
                     </div>
-                    <button type="submit" id="submitBtn" class="btn-action btn-gold" style="width: 100%; justify-content: center;">
-                        <i class="fa-solid fa-paper-plane"></i> Submit Request
-                    </button>
-                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 600;"></div>
-                </form>
+                </div>
             </div>
             <div class="map-card">
                 <iframe src="https://maps.google.com/maps?q=Excel%20Electricals,%20Choondy,%20Aluva&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -703,24 +681,55 @@
         </div>
     </section>
 
-    <!-- FLOATING ACTION BAR -->
+    <!-- SERVICE REQUEST FORM SECTION -->
+    <section id="request">
+        <div class="section-header">
+            <small>Online Booking</small>
+            <h2>Submit a Service Request</h2>
+        </div>
+        <div style="max-width: 650px; margin: 0 auto;">
+            <div class="form-card">
+                <form id="directMsgForm">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Motor Issue / Equipment Details</label>
+                        <textarea name="message" rows="4" class="form-control" placeholder="Describe HP, motor brand, or motor fault..." required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-paper-plane"></i> Send Request
+                    </button>
+                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 600;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING QUICK BAR -->
     <div class="floating-bar">
         <a href="tel:+919876543210" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-        <span style="color: var(--border-line);">|</span>
+        <span style="color: var(--border-light);">|</span>
         <a href="https://wa.me/919876543210" class="float-link"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="rating-badge">
-            <span style="font-weight: 800; color: #fff;">4.9 Rating</span>
+            <span style="font-weight: 800; color: var(--text-dark);">4.9 Rating</span>
             <span class="stars">★★★★★</span>
-            <span style="color: var(--text-sub); font-size: 0.85rem;">Google Verified</span>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Google Verified</span>
         </div>
-        <p style="color: var(--text-sub); font-size: 0.9rem;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
-    <!-- Form Handler Script -->
+    <!-- Form Script -->
     <script>
         const form = document.getElementById('directMsgForm');
         const statusDiv = document.getElementById('formStatus');
@@ -745,20 +754,20 @@
                 const result = await response.json();
                 if (response.status === 200) {
                     statusDiv.style.display = "block";
-                    statusDiv.style.color = "#22c55e";
-                    statusDiv.innerText = "✔️ Request submitted successfully! We will contact you shortly.";
+                    statusDiv.style.color = "#16a34a";
+                    statusDiv.innerText = "✔️ Request sent! We will call you back shortly.";
                     form.reset();
                 } else {
                     statusDiv.style.display = "block";
-                    statusDiv.style.color = "#ef4444";
+                    statusDiv.style.color = "#dc2626";
                     statusDiv.innerText = "✖️ " + (result.message || "Failed to submit.");
                 }
             } catch (error) {
                 statusDiv.style.display = "block";
-                statusDiv.style.color = "#ef4444";
-                statusDiv.innerText = "✖️ Submission error. Please call us directly.";
+                statusDiv.style.color = "#dc2626";
+                statusDiv.innerText = "✖️ Error submitting. Please call directly.";
             } finally {
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Request';
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Request';
                 submitBtn.disabled = false;
             }
         });

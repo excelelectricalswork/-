@@ -25,19 +25,17 @@
     <style>
         :root {
             --bg-golden-light: #fffdf5;
-            --bg-card: rgba(255, 255, 255, 0.92);
+            --bg-card: rgba(255, 255, 255, 0.94);
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
-            --gold-soft: #fef3c7;
             --gold-border: #fde68a;
             --text-dark: #1e1b18;
             --text-muted: #57534e;
-            --border-light: #f3f4f6;
-            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.12), 0 4px 12px -2px rgba(245, 158, 11, 0.08);
+            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.12);
             --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.22);
         }
 
-        /* 100% FULL SCREEN BRIGHT LAYOUT */
+        /* FULL SCREEN BRIGHT LAYOUT WITH FIELD WINDING WATERMARK BACKGROUND */
         html, body {
             width: 100%;
             margin: 0;
@@ -45,6 +43,11 @@
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-golden-light);
+            background-image: linear-gradient(rgba(255, 253, 245, 0.90), rgba(255, 253, 245, 0.90)), url('Field Winding.webp');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
             color: var(--text-dark);
             scroll-behavior: smooth;
         }
@@ -57,33 +60,10 @@
             box-sizing: border-box;
         }
 
-        /* AMBIENT LIGHT GOLDEN GLOW BACKDROPS */
-        .gold-glow-1 {
-            position: fixed;
-            top: -10vw;
-            right: -10vw;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(254, 243, 199, 0.7) 0%, rgba(253, 230, 138, 0.2) 50%, rgba(255,255,255,0) 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .gold-glow-2 {
-            position: fixed;
-            bottom: -10vw;
-            left: -10vw;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(253, 230, 138, 0.4) 0%, rgba(255,255,255,0) 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(255, 253, 245, 0.95);
+            background: rgba(255, 253, 245, 0.96);
             backdrop-filter: blur(16px);
             padding: 16px 5%;
             position: fixed;
@@ -245,10 +225,6 @@
             border-color: var(--gold-primary);
             color: var(--gold-primary);
             transform: translateY(-3px);
-        }
-
-        .hero-image-box {
-            position: relative;
         }
 
         .hero-img {
@@ -477,7 +453,7 @@
             border-top: 1px solid var(--gold-border);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(255, 253, 245, 0.8);
+            background: rgba(255, 253, 245, 0.85);
         }
 
         .rating-badge {
@@ -520,9 +496,6 @@
 </head>
 <body>
 
-    <div class="gold-glow-1"></div>
-    <div class="gold-glow-2"></div>
-
     <!-- HEADER NAVIGATION -->
     <header>
         <a href="#home" class="brand-logo">
@@ -552,8 +525,8 @@
                 <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
             </div>
         </div>
-        <div class="hero-image-box">
-            <img src="25 Hp.jpg" alt="Motor Winding Workshop" class="hero-img">
+        <div>
+            <img src="75hp.jpg" alt="75 HP Motor" class="hero-img">
         </div>
     </section>
 
@@ -565,31 +538,31 @@
         </div>
         <div class="cards-grid">
             <div class="card">
-                <img src="Inducton motor.webp" alt="Induction Motor">
+                <img src="Inducton motor.webp" alt="Induction Motor Repair">
                 <div class="card-body">
                     <h3>Induction Motor Repair</h3>
-                    <p>Heavy duty single & 3-phase induction motor diagnostic and overhaul.</p>
+                    <p>Heavy duty single & 3-phase induction motor diagnostic, testing, and complete overhaul.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="Motor.webp" alt="Motor Servicing">
+                <img src="Motor.webp" alt="Mechanical Overhaul">
                 <div class="card-body">
                     <h3>Mechanical Overhaul</h3>
-                    <p>Bearing replacement, shaft polish, and dynamic housing alignment.</p>
+                    <p>Bearing replacement, shaft polish, dynamic rotor balancing, and housing alignment.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="Field Winding.webp" alt="Stator Rewinding">
+                <img src="Field Winding.webp" alt="Stator Copper Winding">
                 <div class="card-body">
                     <h3>Stator Copper Winding</h3>
-                    <p>High-grade dual coated copper wire coil insertion & varnish dipping.</p>
+                    <p>High-grade dual coated copper wire coil insertion, slot insulation paper, and varnish dipping.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="repair motor.webp" alt="Motor Parts">
+                <img src="repair motor.webp" alt="Component Servicing">
                 <div class="card-body">
                     <h3>Component Servicing</h3>
-                    <p>Capacitors, cooling fan blades, terminal boards, and relay repairs.</p>
+                    <p>Capacitor replacement, cooling fan fitments, terminal board setups, and relay checks.</p>
                 </div>
             </div>
         </div>
@@ -604,23 +577,23 @@
         <div class="cards-grid">
             <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Copper Rewinding</h3>
-                <p>Complete stator & coil rewinding using premium copper wire and thermal insulation paper.</p>
+                <h3>Stator Copper Rewinding</h3>
+                <p>Complete single-phase and 3-phase electric motor coil rewinding with 100% super-enameled copper wire.</p>
             </div>
             <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                <h3>Electrical Testing</h3>
-                <p>Megger insulation test, fault troubleshooting, and coil balancing checks.</p>
+                <h3>Electrical Testing & Fault Diagnosis</h3>
+                <p>Megger insulation resistance testing, short-circuit detection, and full voltage load inspection.</p>
             </div>
             <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
-                <h3>Bearing Fitting</h3>
-                <p>Precision removal and installation of high-speed SKF/NBC motor bearings.</p>
+                <h3>Bearing & Shaft Overhaul</h3>
+                <p>Precision SKF/NBC bearing replacement, shaft re-centering, and dynamic mechanical noise reduction.</p>
             </div>
             <div class="card card-body">
                 <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                <h3>Capacitor & Relays</h3>
-                <p>Testing and replacement of start/run capacitors and centrifugal switches.</p>
+                <h3>Spare Parts & Accessories</h3>
+                <p>Installation of high-grade capacitors, cooling fan impellers, terminal boxes, and overload protectors.</p>
             </div>
         </div>
     </section>

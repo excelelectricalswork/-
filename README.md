@@ -710,9 +710,9 @@
                 <div class="card-body">
                     <div class="service-icon-box">
                         <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h3 style="margin: 0;">Fault Diagnosis</h3>
+                        <h3 style="margin: 0;">Excetor Rotor Rewinding</h3>
                     </div>
-                    <p>Megger insulation resistance testing, winding short-circuit checks, line voltage load inspection, and thermal checks.</p>
+                    <p>Megger insulation resistance testing, winding short-circuit checks, line voltage load inspection, Alternator winding.</p>
                 </div>
             </div>
             <div class="card">

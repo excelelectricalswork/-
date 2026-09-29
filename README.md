@@ -133,7 +133,6 @@
             text-shadow: none !important;
         }
 
-        /* MOBILE MENU TOGGLE BUTTON */
         .mobile-toggle {
             display: none;
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
@@ -249,6 +248,12 @@
             border-radius: 24px;
             border: 3px solid var(--card-border);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.02);
         }
 
         /* SECTIONS */
@@ -284,7 +289,7 @@
             text-shadow: 0 4px 15px rgba(0,0,0,1);
         }
 
-        /* GRID CARDS WITH UNIFORM HEIGHT */
+        /* CARDS GRID */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -315,6 +320,8 @@
             height: 200px;
             overflow: hidden;
             border-bottom: 2px solid var(--card-border);
+            position: relative;
+            cursor: pointer;
         }
 
         .card-img-wrapper img {
@@ -325,7 +332,36 @@
         }
 
         .card:hover .card-img-wrapper img {
-            transform: scale(1.05);
+            transform: scale(1.08);
+        }
+
+        /* CLICK ZOOM OVERLAY INDICATOR */
+        .card-img-wrapper::after {
+            content: "\f00e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            background: rgba(0, 0, 0, 0.65);
+            color: var(--gold-bright);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--gold-bright);
+            pointer-events: none;
+        }
+
+        .card-img-wrapper:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
         }
 
         .card-body {
@@ -523,6 +559,67 @@
             color: var(--gold-bright);
         }
 
+        /* LIGHTBOX POPUP MODAL */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 16px;
+            border: 3px solid var(--gold-bright);
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.6);
+            object-fit: contain;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-modal.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--gold-bright);
+            transition: all 0.25s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold-bright);
+            transform: scale(1.1);
+        }
+
         /* RESPONSIVE RULES */
         @media (max-width: 992px) {
             .mobile-toggle {
@@ -622,7 +719,7 @@
             </div>
         </div>
         <div>
-            <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img">
+            <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img zoomable-img">
         </div>
     </section>
 
@@ -635,7 +732,7 @@
         <div class="cards-grid">
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Inducton motor.webp" alt="Induction Motor Repair">
+                    <img src="Inducton motor.webp" alt="Induction Motor Repair" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <h3>Induction Motor Repair</h3>
@@ -644,7 +741,7 @@
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Field Winding.webp" alt="Stator Copper Winding">
+                    <img src="Field Winding.webp" alt="Stator Copper Winding" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <h3>Stator Copper Winding</h3>
@@ -653,7 +750,7 @@
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Warnishng.webp" alt="Coil Insulation & Varnishing Process">
+                    <img src="Warnishng.webp" alt="Coil Insulation & Varnishing Process" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <h3>Coil Insulation & Varnishing</h3>
@@ -662,7 +759,7 @@
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Sub Pump.webp" alt="Submersible Pump Servicing">
+                    <img src="Sub Pump.webp" alt="Submersible Pump Servicing" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <h3>Pump Servicing</h3>
@@ -672,7 +769,7 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION WITH TOP IMAGE PREVIEWS -->
+    <!-- SERVICES SECTION -->
     <section id="services">
         <div class="section-header">
             <small>High Quality</small>
@@ -683,7 +780,7 @@
             <!-- CARD 1 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Winding.webp" alt="Stator Copper Rewinding">
+                    <img src="Winding.webp" alt="Stator Copper Rewinding" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -697,7 +794,7 @@
             <!-- CARD 2 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="warnishing.jpeg" alt="Coil Varnishing & Baking">
+                    <img src="warnishing.jpeg" alt="Coil Varnishing & Baking" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -711,7 +808,7 @@
             <!-- CARD 3 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Rewinding">
+                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Rewinding" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -725,7 +822,7 @@
             <!-- CARD 4 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Motor.webp" alt="Bearing & Mechanical Overhaul">
+                    <img src="Motor.webp" alt="Bearing & Mechanical Overhaul" class="zoomable-img">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -756,7 +853,7 @@
                 </ul>
             </div>
             <div>
-                <img src="motor wind..webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
+                <img src="motor wind..webp" alt="Workshop Repair" class="zoomable-img" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border); cursor: pointer;">
             </div>
         </div>
     </section>
@@ -842,6 +939,12 @@
         <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
     </div>
 
+    <!-- LIGHTBOX MODAL POPUP -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="Zoomed Image View">
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <div class="rating-badge">
@@ -868,13 +971,45 @@
             }
         });
 
-        // Close menu automatically on link click
+        // Close navigation menu automatically on link click
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
                 if (icon) icon.className = 'fa-solid fa-bars';
             });
+        });
+
+        // LIGHTBOX POPUP SCRIPT (Click any image to view fullscreen)
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.zoomable-img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxModal.classList.add('active');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || "Full View Image";
+            });
+        });
+
+        // Close Lightbox when clicking 'X'
+        lightboxClose.addEventListener('click', () => {
+            lightboxModal.classList.remove('active');
+        });
+
+        // Close Lightbox when clicking outside image
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightboxModal.classList.remove('active');
+            }
+        });
+
+        // Close Lightbox on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightboxModal.classList.remove('active');
+            }
         });
 
         // Form Handling

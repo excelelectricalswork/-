@@ -25,17 +25,17 @@
     <style>
         :root {
             --bg-golden-light: #fffdf5;
-            --bg-card: rgba(255, 255, 255, 0.94);
+            --bg-card: rgba(255, 255, 255, 0.96);
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
             --gold-border: #fde68a;
             --text-dark: #1e1b18;
-            --text-muted: #57534e;
-            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.12);
-            --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.22);
+            --text-muted: #334155;
+            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.18);
+            --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.28);
         }
 
-        /* FULL SCREEN BRIGHT LAYOUT WITH FIELD WINDING WATERMARK BACKGROUND */
+        /* BRIGHT CLEAR BACKGROUND WITH HIGHLIGHTED FIELD WINDING SCREEN SAVER WATERMARK */
         html, body {
             width: 100%;
             margin: 0;
@@ -43,9 +43,10 @@
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-golden-light);
-            background-image: linear-gradient(rgba(255, 253, 245, 0.90), rgba(255, 253, 245, 0.90)), url('Field Winding.webp');
+            /* Balanced overlay to make Field Winding.webp background screen saver stand out clearly */
+            background-image: linear-gradient(rgba(255, 253, 245, 0.55), rgba(255, 253, 245, 0.55)), url('Field Winding.webp');
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: center center;
             background-size: cover;
             background-attachment: fixed;
             color: var(--text-dark);
@@ -74,7 +75,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.05);
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.08);
         }
 
         .brand-logo {
@@ -108,8 +109,8 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 600;
+            color: var(--text-dark);
+            font-weight: 700;
             font-size: 0.95rem;
             transition: all 0.25s ease;
         }
@@ -150,13 +151,13 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid var(--gold-border);
-            color: var(--gold-primary);
+            background: rgba(245, 158, 11, 0.25);
+            border: 1px solid var(--gold-primary);
+            color: #b45309;
             padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.88rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 22px;
         }
 
@@ -181,6 +182,7 @@
             margin-bottom: 35px;
             max-width: 600px;
             line-height: 1.65;
+            font-weight: 600;
         }
 
         .hero-buttons {
@@ -217,7 +219,7 @@
         .btn-outline {
             background: #ffffff;
             color: var(--text-dark);
-            border: 1px solid var(--gold-border);
+            border: 2px solid var(--gold-border);
             box-shadow: var(--shadow-gold);
         }
 
@@ -233,7 +235,8 @@
             object-fit: cover;
             border-radius: 28px;
             border: 4px solid #ffffff;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+            background-color: #f3f4f6;
         }
 
         /* SECTION STYLING */
@@ -256,7 +259,7 @@
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             display: block;
             margin-bottom: 8px;
         }
@@ -316,7 +319,7 @@
         .service-icon {
             width: 52px;
             height: 52px;
-            background: rgba(245, 158, 11, 0.15);
+            background: rgba(245, 158, 11, 0.18);
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -351,7 +354,7 @@
             align-items: center;
             gap: 10px;
             color: var(--text-muted);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .about-features i {
@@ -383,7 +386,7 @@
             margin-bottom: 8px;
             font-size: 0.88rem;
             color: var(--text-dark);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .form-control {
@@ -427,7 +430,7 @@
             display: flex;
             align-items: center;
             gap: 18px;
-            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
             z-index: 999;
         }
 
@@ -453,7 +456,7 @@
             border-top: 1px solid var(--gold-border);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(255, 253, 245, 0.85);
+            background: rgba(255, 253, 245, 0.92);
         }
 
         .rating-badge {
@@ -526,7 +529,8 @@
             </div>
         </div>
         <div>
-            <img src="75hp.jpg" alt="75 HP Motor" class="hero-img">
+            <!-- Match exact filename '75 Hp.webp' from GitHub repository -->
+            <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img">
         </div>
     </section>
 

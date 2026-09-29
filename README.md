@@ -615,14 +615,14 @@
                 <i class="fa-solid fa-shield-halved"></i> Certified Motor Workshop • Choondy, Aluva
             </div>
             <h1>EXPERT ELECTRIC <span>MOTOR WINDING</span> & REPAIR</h1>
-            <p>Reliable stator rewinding, coil replacement, dynamic rotor testing, and complete motor repairs with guaranteed copper quality.</p>
+            <p>Reliable stator rewinding, coil varnishing, dynamic rotor testing, and complete motor repairs with guaranteed high-grade copper wire.</p>
             <div class="hero-buttons">
                 <a href="tel:+918590259451" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
                 <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
             </div>
         </div>
         <div>
-            <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img">
+            <img src="75 Hp.webp" alt="75 HP Heavy Motor Repair" class="hero-img">
         </div>
     </section>
 
@@ -639,16 +639,7 @@
                 </div>
                 <div class="card-body">
                     <h3>Induction Motor Repair</h3>
-                    <p>Heavy duty single & 3-phase induction motor diagnostic, testing, and complete overhaul.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="Motor.webp" alt="Mechanical Overhaul">
-                </div>
-                <div class="card-body">
-                    <h3>Mechanical Overhaul</h3>
-                    <p>Bearing replacement, shaft polish, dynamic rotor balancing, and housing alignment.</p>
+                    <p>Heavy duty single & 3-phase induction motor diagnostic, overhaul, and testing.</p>
                 </div>
             </div>
             <div class="card">
@@ -657,16 +648,25 @@
                 </div>
                 <div class="card-body">
                     <h3>Stator Copper Winding</h3>
-                    <p>High-grade dual coated copper wire coil insertion, slot insulation paper, and varnish dipping.</p>
+                    <p>High-grade dual coated copper wire coil insertion, slot insulation paper, and lacing setup.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="repair motor.webp" alt="Component Servicing">
+                    <img src="Warnishng.webp" alt="Coil Insulation & Varnishing Process">
                 </div>
                 <div class="card-body">
-                    <h3>Component Servicing</h3>
-                    <p>Capacitor replacement, cooling fan fitments, terminal board setups, and relay checks.</p>
+                    <h3>Coil Insulation & Varnishing</h3>
+                    <p>Deep insulating varnish application and controlled temperature baking to protect against moisture and short circuits.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="Sub Pump.webp" alt="Submersible & Centrifugal Pump Servicing">
+                </div>
+                <div class="card-body">
+                    <h3>Pump Servicing</h3>
+                    <p>Submersible, openwell, and centrifugal pump motor rewinding, mechanical seal replacement, and leak testing.</p>
                 </div>
             </div>
         </div>
@@ -681,7 +681,7 @@
         <div class="cards-grid">
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Field Winding.webp" alt="Stator Copper Rewinding">
+                    <img src="Winding.webp" alt="Stator Copper Rewinding">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -693,6 +693,18 @@
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
+                    <img src="warnishing.jpeg" alt="Coil Varnishing & Hot Baking">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-fill-drip"></i></div>
+                        <h3 style="margin: 0;">Coil Varnishing & Baking</h3>
+                    </div>
+                    <p>High-dielectric insulating varnish dipping and oven baking for maximum vibration protection and moisture resistance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrapper">
                     <img src="75 Hp.webp" alt="Electrical Testing & Fault Diagnosis">
                 </div>
                 <div class="card-body">
@@ -700,31 +712,19 @@
                         <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                         <h3 style="margin: 0;">Fault Diagnosis</h3>
                     </div>
-                    <p>Megger insulation resistance testing, short-circuit detection, and full voltage load inspection.</p>
+                    <p>Megger insulation resistance testing, winding short-circuit checks, line voltage load inspection, and thermal checks.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Motor.webp" alt="Bearing & Shaft Overhaul">
+                    <img src="Motor.webp" alt="Bearing & Mechanical Overhaul">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
                         <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
-                        <h3 style="margin: 0;">Bearing Overhaul</h3>
+                        <h3 style="margin: 0;">Bearing & Shaft Overhaul</h3>
                     </div>
-                    <p>Precision SKF/NBC bearing replacement, shaft re-centering, and dynamic mechanical noise reduction.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="repair motor.webp" alt="Spare Parts & Accessories">
-                </div>
-                <div class="card-body">
-                    <div class="service-icon-box">
-                        <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                        <h3 style="margin: 0;">Parts & Accessories</h3>
-                    </div>
-                    <p>Installation of high-grade capacitors, cooling fan impellers, terminal boxes, and overload protectors.</p>
+                    <p>Precision SKF/NBC bearing replacement, shaft polishing, housing alignment, and mechanical noise reduction.</p>
                 </div>
             </div>
         </div>
@@ -742,12 +742,12 @@
                 <p style="color: var(--text-sub); line-height: 1.7; font-size: 1.05rem;">Excel Electricals provides fast, trusted, and durable motor winding solutions for industrial machines, domestic pumps, and commercial equipment in Choondy, Aluva.</p>
                 <ul class="about-features">
                     <li><i class="fa-solid fa-circle-check"></i> 100% Super Enameled Copper Wire</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Fast Turnaround & Emergency Support</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Certified & Tested Before Delivery</li>
+                    <li><i class="fa-solid fa-circle-check"></i> High-Grade Dielectric Varnishing & Baking</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Fast Turnaround & Full Testing Guarantee</li>
                 </ul>
             </div>
             <div>
-                <img src="motor wind..webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
+                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
             </div>
         </div>
     </section>

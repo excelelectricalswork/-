@@ -1,4 +1,38 @@
-<!DOCTYPE html>
+[9:37 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Electricals | Motor Winding & Repair Workshop</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Analytics Tag -->
+    <script async src="https://www.googletag…
+[9:44 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Electricals | Motor Winding & Repair Workshop</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Analytics Tag -->
+    <script async src="https://www.googletag…
+[9:50 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,14 +68,14 @@
             --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.28);
         }
 
-        /* BACKGROUND SET TO 'motor wind.webp' SCREEN SAVER */
+        /* BACKGROUND SET ONLY TO THE IMAGE (NO OVERLAY COLOR) */
         html, body {
             width: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('motor wind.webp');
+            background-image: url('motor wind.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -166,6 +200,11 @@
             font-weight: 800;
             letter-spacing: -1.2px;
             color: var(--text-dark);
+            background: rgba(255, 255, 255, 0.85);
+            padding: 10px 18px;
+            border-radius: 16px;
+            display: inline-block;
+            backdrop-filter: blur(6px);
         }
 
         .hero h1 span {
@@ -181,10 +220,10 @@
             max-width: 600px;
             line-height: 1.65;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 12px;
-            border-radius: 12px;
-            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.85);
+            padding: 14px 18px;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
         }
 
         .hero-buttons {
@@ -237,7 +276,7 @@
             object-fit: cover;
             border-radius: 28px;
             border: 4px solid #ffffff;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
             background-color: #f3f4f6;
         }
 
@@ -254,10 +293,11 @@
             text-align: center;
             max-width: 650px;
             margin: 0 auto 50px auto;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.88);
+            padding: 18px 28px;
             border-radius: 20px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .section-header small {

@@ -1,38 +1,4 @@
-[9:37 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Electricals | Motor Winding & Repair Workshop</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Analytics Tag -->
-    <script async src="https://www.googletag…
-[9:44 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Electricals | Motor Winding & Repair Workshop</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Analytics Tag -->
-    <script async src="https://www.googletag…
-[9:50 pm, 29/09/2026] Sijo Xavier: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,34 +24,33 @@
 
     <style>
         :root {
-            --bg-card: rgba(255, 255, 255, 0.92);
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
-            --gold-border: #fde68a;
-            --text-dark: #1e1b18;
-            --text-muted: #334155;
-            --shadow-gold: 0 10px 30px -5px rgba(217, 119, 6, 0.18);
-            --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.28);
+            --gold-border: rgba(255, 255, 255, 0.4);
+            --text-dark: #ffffff;
+            --text-muted: #e2e8f0;
         }
 
-        /* BACKGROUND SET ONLY TO THE IMAGE (NO OVERLAY COLOR) */
+        /* DIRECT FULL-SCREEN BACKGROUND IMAGE WITH URL ENCODING (%20 FOR SPACE) */
         html, body {
             width: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-image: url('motor wind.webp');
+            background-color: #000000;
+            background-image: url('motor%20wind.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
             background-attachment: fixed;
-            color: var(--text-dark);
+            color: #ffffff;
             scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4, .brand-text {
             font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
         }
 
         * {
@@ -95,18 +60,17 @@
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(12px);
             padding: 16px 5%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--gold-border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.08);
         }
 
         .brand-logo {
@@ -115,7 +79,7 @@
             gap: 12px;
             font-size: 1.35rem;
             font-weight: 800;
-            color: var(--text-dark);
+            color: #ffffff;
             text-decoration: none;
         }
 
@@ -129,7 +93,7 @@
             justify-content: center;
             color: #fff;
             font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.5);
         }
 
         nav {
@@ -140,14 +104,14 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: #ffffff;
             font-weight: 700;
             font-size: 0.95rem;
             transition: all 0.25s ease;
         }
 
         nav a:hover {
-            color: var(--gold-primary);
+            color: var(--gold-accent);
         }
 
         .nav-btn {
@@ -156,13 +120,7 @@
             padding: 10px 22px;
             border-radius: 50px;
             font-weight: 700 !important;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
-            transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.45);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
         }
 
         /* HERO SECTION */
@@ -182,15 +140,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--gold-primary);
-            color: #b45309;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--gold-accent);
+            color: #fef08a;
             padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.88rem;
             font-weight: 800;
             margin-bottom: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            backdrop-filter: blur(6px);
         }
 
         .hero h1 {
@@ -199,31 +157,21 @@
             margin-bottom: 20px;
             font-weight: 800;
             letter-spacing: -1.2px;
-            color: var(--text-dark);
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px 18px;
-            border-radius: 16px;
-            display: inline-block;
-            backdrop-filter: blur(6px);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
         .hero h1 span {
-            background: linear-gradient(135deg, var(--gold-primary), #92400e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--gold-accent);
         }
 
         .hero p {
             font-size: 1.15rem;
-            color: #1e293b;
+            color: #f1f5f9;
             margin-bottom: 35px;
             max-width: 600px;
             line-height: 1.65;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 14px 18px;
-            border-radius: 14px;
-            backdrop-filter: blur(6px);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
 
         .hero-buttons {
@@ -249,24 +197,23 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--gold-accent), var(--gold-primary));
             color: #fff;
-            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.3);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(217, 119, 6, 0.45);
         }
 
         .btn-outline {
-            background: #ffffff;
-            color: var(--text-dark);
-            border: 2px solid var(--gold-border);
-            box-shadow: var(--shadow-gold);
+            background: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(6px);
         }
 
         .btn-outline:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
             transform: translateY(-3px);
         }
 
@@ -275,9 +222,8 @@
             height: 450px;
             object-fit: cover;
             border-radius: 28px;
-            border: 4px solid #ffffff;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-            background-color: #f3f4f6;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
         /* SECTION STYLING */
@@ -293,15 +239,10 @@
             text-align: center;
             max-width: 650px;
             margin: 0 auto 50px auto;
-            background: rgba(255, 255, 255, 0.88);
-            padding: 18px 28px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .section-header small {
-            color: var(--gold-primary);
+            color: var(--gold-accent);
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -313,11 +254,11 @@
         .section-header h2 {
             font-size: 2.4rem;
             letter-spacing: -0.8px;
-            color: var(--text-dark);
             margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
         }
 
-        /* GRID CARDS */
+        /* GRID CARDS (TRANSPARENT WITH BLUR) */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -326,19 +267,18 @@
         }
 
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-gold);
             transition: all 0.35s ease;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--gold-primary);
+            border-color: var(--gold-accent);
+            background: rgba(0, 0, 0, 0.65);
         }
 
         .card img {
@@ -354,7 +294,6 @@
         .card-body h3 {
             font-size: 1.25rem;
             margin-bottom: 8px;
-            color: var(--text-dark);
         }
 
         .card-body p {
@@ -363,32 +302,30 @@
             line-height: 1.6;
         }
 
-        /* SERVICES WIDGETS */
         .service-icon {
             width: 52px;
             height: 52px;
-            background: rgba(245, 158, 11, 0.18);
+            background: rgba(245, 158, 11, 0.25);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold-primary);
+            color: var(--gold-accent);
             font-size: 1.4rem;
             margin-bottom: 18px;
         }
 
         /* ABOUT SECTION */
         .about-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 40px;
-            box-shadow: var(--shadow-gold);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .about-features {
@@ -407,7 +344,7 @@
         }
 
         .about-features i {
-            color: var(--gold-primary);
+            color: var(--gold-accent);
         }
 
         /* CONTACTS & SERVICE REQUEST */
@@ -419,12 +356,11 @@
         }
 
         .form-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
             padding: 35px;
-            box-shadow: var(--shadow-gold);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .form-group {
@@ -435,17 +371,17 @@
             display: block;
             margin-bottom: 8px;
             font-size: 0.88rem;
-            color: var(--text-dark);
+            color: #ffffff;
             font-weight: 700;
         }
 
         .form-control {
             width: 100%;
             padding: 14px 16px;
-            background: #ffffff;
-            border: 1px solid var(--gold-border);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
-            color: var(--text-dark);
+            color: #000;
             font-family: inherit;
             font-size: 0.95rem;
             transition: all 0.25s ease;
@@ -453,17 +389,16 @@
 
         .form-control:focus {
             outline: none;
-            background: #fff;
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+            background: #ffffff;
+            border-color: var(--gold-accent);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4);
         }
 
         .map-card {
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid var(--gold-border);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             min-height: 420px;
-            box-shadow: var(--shadow-gold);
         }
 
         /* FLOATING ACTION BAR */
@@ -472,15 +407,14 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(16px);
-            border: 1px solid var(--gold-border);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 10px 24px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             gap: 18px;
-            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
             z-index: 999;
         }
 
@@ -488,14 +422,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--text-dark);
+            color: #ffffff;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 700;
         }
 
         .float-gold {
-            color: var(--gold-primary);
+            color: var(--gold-accent);
         }
 
         /* FOOTER */
@@ -503,18 +437,18 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            border-top: 1px solid var(--gold-border);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(0, 0, 0, 0.65);
         }
 
         .rating-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #ffffff;
-            border: 1px solid var(--gold-border);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
@@ -750,14 +684,14 @@
     <!-- FLOATING QUICK BAR -->
     <div class="floating-bar">
         <a href="tel:+918590259451" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-        <span style="color: var(--gold-border);">|</span>
+        <span style="color: rgba(255,255,255,0.3);">|</span>
         <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="rating-badge">
-            <span style="font-weight: 800; color: var(--text-dark);">4.9 Rating</span>
+            <span style="font-weight: 800; color: #ffffff;">4.9 Rating</span>
             <span class="stars">★★★★★</span>
             <span style="color: var(--text-muted); font-size: 0.85rem;">Google Verified</span>
         </div>
@@ -789,17 +723,17 @@
                 const result = await response.json();
                 if (response.status === 200) {
                     statusDiv.style.display = "block";
-                    statusDiv.style.color = "#16a34a";
+                    statusDiv.style.color = "#4ade80";
                     statusDiv.innerText = "✔️ Request sent! We will call you back shortly.";
                     form.reset();
                 } else {
                     statusDiv.style.display = "block";
-                    statusDiv.style.color = "#dc2626";
+                    statusDiv.style.color = "#f87171";
                     statusDiv.innerText = "✖️ " + (result.message || "Failed to submit.");
                 }
             } catch (error) {
                 statusDiv.style.display = "block";
-                statusDiv.style.color = "#dc2626";
+                statusDiv.style.color = "#f87171";
                 statusDiv.innerText = "✖️ Error submitting. Please call directly.";
             } finally {
                 submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Request';

@@ -27,7 +27,7 @@
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
             --gold-bright: #fbbf24;
-            --card-bg: rgba(15, 23, 42, 0.88);
+            --card-bg: rgba(15, 23, 42, 0.92);
             --card-border: rgba(245, 158, 11, 0.4);
             --text-main: #ffffff;
             --text-sub: #cbd5e1;
@@ -151,7 +151,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            min-height: 90vh;
+            min-height: 85vh;
             padding: 140px 5% 60px 5%;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -244,8 +244,7 @@
 
         .hero-img {
             width: 100%;
-            height: auto;
-            max-height: 450px;
+            height: 380px;
             object-fit: cover;
             border-radius: 24px;
             border: 3px solid var(--card-border);
@@ -257,14 +256,14 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 80px 5%;
+            padding: 60px 5%;
             scroll-margin-top: 70px;
         }
 
         .section-header {
             text-align: center;
             max-width: 650px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 40px auto;
         }
 
         .section-header small {
@@ -285,11 +284,11 @@
             text-shadow: 0 4px 15px rgba(0,0,0,1);
         }
 
-        /* GRID CARDS WITH AUTOMATIC RESPONSIVE FIT */
+        /* GRID CARDS WITH MATCHING HEIGHT & NO BLANK GAPS */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
             width: 100%;
         }
 
@@ -298,52 +297,76 @@
             border: 1.5px solid var(--card-border);
             border-radius: 20px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
             transition: all 0.35s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--gold-bright);
-            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.35);
         }
 
-        .card img {
+        .card-img-wrapper {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
+            height: 180px;
+            overflow: hidden;
             border-bottom: 2px solid var(--card-border);
         }
 
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
         .card-body {
-            padding: 24px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .card-body h3 {
-            font-size: 1.35rem;
-            margin-bottom: 10px;
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
             color: #ffffff;
         }
 
         .card-body p {
             color: var(--text-sub);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             line-height: 1.6;
             font-weight: 500;
+            margin: 0;
+        }
+
+        .service-icon-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
         .service-icon {
-            width: 56px;
-            height: 56px;
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #000000;
-            font-size: 1.5rem;
-            margin-bottom: 18px;
+            font-size: 1.3rem;
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
         }
 
@@ -352,10 +375,10 @@
             background: var(--card-bg);
             border: 1.5px solid var(--card-border);
             border-radius: 24px;
-            padding: 40px;
+            padding: 35px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 35px;
             align-items: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -368,13 +391,13 @@
         }
 
         .about-features li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
             color: var(--text-sub);
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .about-features i {
@@ -386,7 +409,7 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 35px;
+            gap: 30px;
             width: 100%;
         }
 
@@ -394,13 +417,13 @@
             background: var(--card-bg);
             border: 1.5px solid var(--card-border);
             border-radius: 24px;
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
@@ -413,7 +436,7 @@
 
         .form-control {
             width: 100%;
-            padding: 15px 18px;
+            padding: 14px 16px;
             background: #ffffff;
             border: 2px solid #cbd5e1;
             border-radius: 12px;
@@ -479,7 +502,7 @@
             z-index: 1;
             width: 100%;
             border-top: 2px solid var(--gold-primary);
-            padding: 40px 5% 100px 5%;
+            padding: 35px 5% 90px 5%;
             text-align: center;
             background: rgba(10, 15, 29, 0.95);
         }
@@ -492,7 +515,7 @@
             border: 1px solid var(--gold-bright);
             padding: 8px 20px;
             border-radius: 50px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             font-size: 0.95rem;
         }
 
@@ -500,14 +523,14 @@
             color: var(--gold-bright);
         }
 
-        /* AUTOMATIC SCREEN SIZE RESPONSIVE RULES (MOBILE & TABLET) */
+        /* AUTOMATIC SCREEN SIZE RESPONSIVE RULES */
         @media (max-width: 992px) {
             .mobile-toggle {
-                display: block; /* Show hamburger button on mobile screens */
+                display: block;
             }
 
             nav {
-                display: none; /* Hide default navbar links on mobile */
+                display: none;
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
@@ -521,7 +544,7 @@
             }
 
             nav.active {
-                display: flex; /* Open menu when hamburger button is clicked */
+                display: flex;
             }
 
             nav a {
@@ -538,7 +561,7 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding-top: 120px;
+                padding-top: 110px;
                 gap: 30px;
             }
 
@@ -556,7 +579,7 @@
             }
 
             section {
-                padding: 60px 4%;
+                padding: 50px 4%;
             }
         }
     </style>
@@ -611,28 +634,36 @@
         </div>
         <div class="cards-grid">
             <div class="card">
-                <img src="Inducton motor.webp" alt="Induction Motor Repair">
+                <div class="card-img-wrapper">
+                    <img src="Inducton motor.webp" alt="Induction Motor Repair">
+                </div>
                 <div class="card-body">
                     <h3>Induction Motor Repair</h3>
                     <p>Heavy duty single & 3-phase induction motor diagnostic, testing, and complete overhaul.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="Motor.webp" alt="Mechanical Overhaul">
+                <div class="card-img-wrapper">
+                    <img src="Motor.webp" alt="Mechanical Overhaul">
+                </div>
                 <div class="card-body">
                     <h3>Mechanical Overhaul</h3>
                     <p>Bearing replacement, shaft polish, dynamic rotor balancing, and housing alignment.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="Field Winding.webp" alt="Stator Copper Winding">
+                <div class="card-img-wrapper">
+                    <img src="Field Winding.webp" alt="Stator Copper Winding">
+                </div>
                 <div class="card-body">
                     <h3>Stator Copper Winding</h3>
                     <p>High-grade dual coated copper wire coil insertion, slot insulation paper, and varnish dipping.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="repair motor.webp" alt="Component Servicing">
+                <div class="card-img-wrapper">
+                    <img src="repair motor.webp" alt="Component Servicing">
+                </div>
                 <div class="card-body">
                     <h3>Component Servicing</h3>
                     <p>Capacitor replacement, cooling fan fitments, terminal board setups, and relay checks.</p>
@@ -648,25 +679,53 @@
             <h2>Our Workshop Services</h2>
         </div>
         <div class="cards-grid">
-            <div class="card card-body">
-                <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Stator Copper Rewinding</h3>
-                <p>Complete single-phase and 3-phase electric motor coil rewinding with 100% super-enameled copper wire.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="Field Winding.webp" alt="Stator Copper Rewinding">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 style="margin: 0;">Stator Rewinding</h3>
+                    </div>
+                    <p>Complete single-phase and 3-phase electric motor coil rewinding with 100% super-enameled copper wire.</p>
+                </div>
             </div>
-            <div class="card card-body">
-                <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                <h3>Electrical Testing & Fault Diagnosis</h3>
-                <p>Megger insulation resistance testing, short-circuit detection, and full voltage load inspection.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="75 Hp.webp" alt="Electrical Testing & Fault Diagnosis">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 style="margin: 0;">Fault Diagnosis</h3>
+                    </div>
+                    <p>Megger insulation resistance testing, short-circuit detection, and full voltage load inspection.</p>
+                </div>
             </div>
-            <div class="card card-body">
-                <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
-                <h3>Bearing & Shaft Overhaul</h3>
-                <p>Precision SKF/NBC bearing replacement, shaft re-centering, and dynamic mechanical noise reduction.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="Motor.webp" alt="Bearing & Shaft Overhaul">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+                        <h3 style="margin: 0;">Bearing Overhaul</h3>
+                    </div>
+                    <p>Precision SKF/NBC bearing replacement, shaft re-centering, and dynamic mechanical noise reduction.</p>
+                </div>
             </div>
-            <div class="card card-body">
-                <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                <h3>Spare Parts & Accessories</h3>
-                <p>Installation of high-grade capacitors, cooling fan impellers, terminal boxes, and overload protectors.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="repair motor.webp" alt="Spare Parts & Accessories">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
+                        <h3 style="margin: 0;">Parts & Accessories</h3>
+                    </div>
+                    <p>Installation of high-grade capacitors, cooling fan impellers, terminal boxes, and overload protectors.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -688,7 +747,7 @@
                 </ul>
             </div>
             <div>
-                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 280px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
+                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
             </div>
         </div>
     </section>
@@ -700,33 +759,33 @@
             <h2>Contact & Location</h2>
         </div>
         <div class="contact-grid">
-            <div class="form-card" style="display: flex; flex-direction: column; justify-content: center; gap: 24px;">
-                <div style="display: flex; align-items: center; gap: 18px;">
+            <div class="form-card" style="display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-location-dot"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Workshop Location</h4>
-                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">Choondy, Edathala, Aluva, Ernakulam, Kerala</p>
+                        <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Workshop Location</h4>
+                        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 500; margin: 0;">Choondy, Edathala, Aluva, Ernakulam, Kerala</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 18px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-phone"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Phone & WhatsApp</h4>
-                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">+91 85902 59451</p>
+                        <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Phone & WhatsApp</h4>
+                        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 500; margin: 0;">+91 85902 59451</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 18px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-envelope"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">Email Address</h4>
-                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">excelelectricalswork@gmail.com</p>
+                        <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Email Address</h4>
+                        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 500; margin: 0;">excelelectricalswork@gmail.com</p>
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 18px;">
+                <div style="display: flex; align-items: center; gap: 16px;">
                     <div class="service-icon" style="margin: 0;"><i class="fa-solid fa-id-card"></i></div>
                     <div>
-                        <h4 style="margin-bottom: 4px; font-size: 1.15rem;">GST Registration</h4>
-                        <p style="color: var(--text-sub); font-size: 1rem; font-weight: 500;">GSTIN: 32AAGPX3837Q1ZZ</p>
+                        <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">GST Registration</h4>
+                        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 500; margin: 0;">GSTIN: 32AAGPX3837Q1ZZ</p>
                     </div>
                 </div>
             </div>
@@ -745,7 +804,6 @@
         <div style="max-width: 650px; margin: 0 auto;">
             <div class="form-card">
                 <form id="directMsgForm">
-                    <!-- Replace YOUR_WEB3FORMS_ACCESS_KEY with your Web3Forms key -->
                     <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
                     <div class="form-group">
                         <label>Your Name</label>
@@ -785,9 +843,9 @@
         <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 600;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu & Form Submission -->
+    <!-- JavaScript -->
     <script>
-        // Mobile Navigation Menu Toggle
+        // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -801,7 +859,7 @@
             }
         });
 
-        // Close mobile menu automatically when a link is clicked
+        // Close menu automatically on link click
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -810,7 +868,7 @@
             });
         });
 
-        // Form Handling Script
+        // Form Handling
         const form = document.getElementById('directMsgForm');
         const statusDiv = document.getElementById('formStatus');
         const submitBtn = document.getElementById('submitBtn');

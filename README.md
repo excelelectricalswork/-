@@ -747,7 +747,7 @@
                 </ul>
             </div>
             <div>
-                <img src="repair motor.webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
+                <img src="motor wind..webp" alt="Workshop Repair" style="width: 100%; height: 260px; object-fit: cover; border-radius: 18px; border: 2px solid var(--card-border);">
             </div>
         </div>
     </section>

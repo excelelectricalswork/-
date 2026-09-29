@@ -199,18 +199,18 @@
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 15px 32px;
+            gap: 8px;
+            padding: 14px 24px;
             border-radius: 14px;
             font-weight: 800;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -237,6 +237,19 @@
 
         .btn-outline:hover {
             background: var(--gold-bright);
+            color: #000000;
+            transform: translateY(-3px);
+        }
+
+        .btn-email {
+            background: rgba(15, 23, 42, 0.9);
+            color: #ffffff;
+            border: 2px solid #38bdf8;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .btn-email:hover {
+            background: #38bdf8;
             color: #000000;
             transform: translateY(-3px);
         }
@@ -506,15 +519,15 @@
             background: rgba(10, 15, 29, 0.95);
             backdrop-filter: blur(16px);
             border: 2px solid var(--gold-bright);
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
             z-index: 999;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
             width: max-content;
-            max-width: 90%;
+            max-width: 95%;
             justify-content: center;
         }
 
@@ -524,12 +537,17 @@
             gap: 8px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 800;
+            transition: color 0.2s ease;
         }
 
         .float-gold {
             color: var(--gold-bright);
+        }
+
+        .float-blue {
+            color: #38bdf8;
         }
 
         /* FOOTER */
@@ -716,6 +734,7 @@
             <div class="hero-buttons">
                 <a href="tel:+918590259451" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
                 <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
+                <a href="mailto:excelelectricalswork@gmail.com" class="btn btn-email"><i class="fa-solid fa-envelope" style="color: #38bdf8;"></i> Email Us</a>
             </div>
         </div>
         <div>
@@ -937,6 +956,8 @@
         <a href="tel:+918590259451" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
         <span style="color: rgba(255,255,255,0.4);">|</span>
         <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
+        <span style="color: rgba(255,255,255,0.4);">|</span>
+        <a href="mailto:excelelectricalswork@gmail.com" class="float-link float-blue"><i class="fa-solid fa-envelope"></i> Email Us</a>
     </div>
 
     <!-- LIGHTBOX MODAL POPUP -->

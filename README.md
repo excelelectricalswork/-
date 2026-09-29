@@ -24,8 +24,7 @@
 
     <style>
         :root {
-            --bg-golden-light: #fffdf5;
-            --bg-card: rgba(255, 255, 255, 0.96);
+            --bg-card: rgba(255, 255, 255, 0.92);
             --gold-primary: #d97706;
             --gold-accent: #f59e0b;
             --gold-border: #fde68a;
@@ -35,16 +34,14 @@
             --shadow-hover: 0 20px 35px -5px rgba(217, 119, 6, 0.28);
         }
 
-        /* BRIGHT CLEAR BACKGROUND WITH HIGHLIGHTED FIELD WINDING SCREEN SAVER WATERMARK */
+        /* BACKGROUND SET TO 'motor wind.webp' SCREEN SAVER */
         html, body {
             width: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-golden-light);
-            /* Balanced overlay to make Field Winding.webp background screen saver stand out clearly */
-            background-image: linear-gradient(rgba(255, 253, 245, 0.55), rgba(255, 253, 245, 0.55)), url('Field Winding.webp');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('motor wind.webp');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -64,7 +61,7 @@
         /* HEADER NAVIGATION */
         header {
             width: 100%;
-            background: rgba(255, 253, 245, 0.96);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(16px);
             padding: 16px 5%;
             position: fixed;
@@ -151,7 +148,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(245, 158, 11, 0.25);
+            background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--gold-primary);
             color: #b45309;
             padding: 8px 18px;
@@ -159,6 +156,7 @@
             font-size: 0.88rem;
             font-weight: 800;
             margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .hero h1 {
@@ -178,11 +176,15 @@
 
         .hero p {
             font-size: 1.15rem;
-            color: var(--text-muted);
+            color: #1e293b;
             margin-bottom: 35px;
             max-width: 600px;
             line-height: 1.65;
             font-weight: 600;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 12px;
+            border-radius: 12px;
+            backdrop-filter: blur(4px);
         }
 
         .hero-buttons {
@@ -252,6 +254,10 @@
             text-align: center;
             max-width: 650px;
             margin: 0 auto 50px auto;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
         }
 
         .section-header small {
@@ -268,6 +274,7 @@
             font-size: 2.4rem;
             letter-spacing: -0.8px;
             color: var(--text-dark);
+            margin: 0;
         }
 
         /* GRID CARDS */
@@ -285,6 +292,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-gold);
             transition: all 0.35s ease;
+            backdrop-filter: blur(10px);
         }
 
         .card:hover {
@@ -340,6 +348,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
         .about-features {
@@ -375,6 +384,7 @@
             border-radius: 24px;
             padding: 35px;
             box-shadow: var(--shadow-gold);
+            backdrop-filter: blur(10px);
         }
 
         .form-group {
@@ -422,7 +432,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 253, 245, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
             border: 1px solid var(--gold-border);
             padding: 10px 24px;
@@ -456,7 +466,7 @@
             border-top: 1px solid var(--gold-border);
             padding: 40px 5% 30px 5%;
             text-align: center;
-            background: rgba(255, 253, 245, 0.92);
+            background: rgba(255, 255, 255, 0.92);
         }
 
         .rating-badge {
@@ -529,7 +539,6 @@
             </div>
         </div>
         <div>
-            <!-- Match exact filename '75 Hp.webp' from GitHub repository -->
             <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img">
         </div>
     </section>

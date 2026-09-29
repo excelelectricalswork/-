@@ -284,7 +284,7 @@
             text-shadow: 0 4px 15px rgba(0,0,0,1);
         }
 
-        /* GRID CARDS WITH MATCHING HEIGHT & NO BLANK GAPS */
+        /* GRID CARDS WITH UNIFORM HEIGHT */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -312,7 +312,7 @@
 
         .card-img-wrapper {
             width: 100%;
-            height: 180px;
+            height: 200px;
             overflow: hidden;
             border-bottom: 2px solid var(--card-border);
         }
@@ -357,16 +357,16 @@
         }
 
         .service-icon {
-            width: 46px;
-            height: 46px;
-            min-width: 46px;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
             background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #000000;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
         }
 
@@ -523,7 +523,7 @@
             color: var(--gold-bright);
         }
 
-        /* AUTOMATIC SCREEN SIZE RESPONSIVE RULES */
+        /* RESPONSIVE RULES */
         @media (max-width: 992px) {
             .mobile-toggle {
                 display: block;
@@ -615,14 +615,14 @@
                 <i class="fa-solid fa-shield-halved"></i> Certified Motor Workshop • Choondy, Aluva
             </div>
             <h1>EXPERT ELECTRIC <span>MOTOR WINDING</span> & REPAIR</h1>
-            <p>Reliable stator rewinding, coil varnishing, dynamic rotor testing, and complete motor repairs with guaranteed high-grade copper wire.</p>
+            <p>Reliable stator rewinding, coil varnishing, dynamic rotor testing, and complete motor repairs with guaranteed super-enameled copper wire.</p>
             <div class="hero-buttons">
                 <a href="tel:+918590259451" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
                 <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
             </div>
         </div>
         <div>
-            <img src="75 Hp.webp" alt="75 HP Heavy Motor Repair" class="hero-img">
+            <img src="75 Hp.webp" alt="75 HP Motor Repair" class="hero-img">
         </div>
     </section>
 
@@ -657,12 +657,12 @@
                 </div>
                 <div class="card-body">
                     <h3>Coil Insulation & Varnishing</h3>
-                    <p>Deep insulating varnish application and controlled temperature baking to protect against moisture and short circuits.</p>
+                    <p>Deep insulating varnish application and controlled oven baking to protect against moisture and short circuits.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Sub Pump.webp" alt="Submersible & Centrifugal Pump Servicing">
+                    <img src="Sub Pump.webp" alt="Submersible Pump Servicing">
                 </div>
                 <div class="card-body">
                     <h3>Pump Servicing</h3>
@@ -672,13 +672,15 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES SECTION WITH TOP IMAGE PREVIEWS -->
     <section id="services">
         <div class="section-header">
             <small>High Quality</small>
             <h2>Our Workshop Services</h2>
         </div>
         <div class="cards-grid">
+            
+            <!-- CARD 1 -->
             <div class="card">
                 <div class="card-img-wrapper">
                     <img src="Winding.webp" alt="Stator Copper Rewinding">
@@ -691,9 +693,11 @@
                     <p>Complete single-phase and 3-phase electric motor coil rewinding with 100% super-enameled copper wire.</p>
                 </div>
             </div>
+
+            <!-- CARD 2 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="warnishing.jpeg" alt="Coil Varnishing & Hot Baking">
+                    <img src="warnishing.jpeg" alt="Coil Varnishing & Baking">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -703,9 +707,11 @@
                     <p>High-dielectric insulating varnish dipping and oven baking for maximum vibration protection and moisture resistance.</p>
                 </div>
             </div>
+
+            <!-- CARD 3 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Windindg">
+                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Rewinding">
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
@@ -715,6 +721,8 @@
                     <p>Megger insulation resistance testing, winding short-circuit checks, line voltage load inspection, Alternator winding.</p>
                 </div>
             </div>
+
+            <!-- CARD 4 -->
             <div class="card">
                 <div class="card-img-wrapper">
                     <img src="Motor.webp" alt="Bearing & Mechanical Overhaul">
@@ -722,11 +730,12 @@
                 <div class="card-body">
                     <div class="service-icon-box">
                         <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
-                        <h3 style="margin: 0;">Bearing & Shaft Overhaul</h3>
+                        <h3 style="margin: 0;">Bearing & Mechanical Overhaul</h3>
                     </div>
                     <p>Precision SKF/NBC bearing replacement, shaft polishing, housing alignment, and mechanical noise reduction.</p>
                 </div>
             </div>
+
         </div>
     </section>
 

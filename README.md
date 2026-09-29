@@ -42,7 +42,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #000000;
             background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
                 url('motor%20wind..webp');
             background-repeat: no-repeat;
             background-position: center center;

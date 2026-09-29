@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel Electricals | Motor Winding & Repair Workshop</title>
+    <title>Excel Electricals | Premium Motor Winding & Repair Workshop</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,7 +23,19 @@
     </script>
 
     <style>
-        /* RESET & BASE STYLES */
+        :root {
+            --bg-main: #060913;
+            --bg-card: rgba(18, 26, 43, 0.7);
+            --bg-card-hover: rgba(28, 39, 64, 0.9);
+            --accent-gold: #ffc107;
+            --accent-glow: rgba(255, 193, 7, 0.25);
+            --accent-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-line: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(255, 193, 7, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -31,438 +43,472 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
             line-height: 1.6;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
+        h1, h2, h3, .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        /* BACKGROUND GLOW EFFECTS */
+        .glow-sphere-1 {
+            position: fixed;
+            top: -100px;
+            right: -100px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.12) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        section {
-            padding: 80px 7%;
-            scroll-margin-top: 70px;
+        .glow-sphere-2 {
+            position: fixed;
+            bottom: -150px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            pointer-events: none;
         }
 
         /* HEADER & NAVIGATION */
         header {
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 7%;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(16px);
+            padding: 16px 8%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 184, 0, 0.2);
+            border-bottom: 1px solid var(--border-line);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            color: #ffb800;
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 24px;
         }
 
         nav a {
-            color: #cbd5e1;
+            text-decoration: none;
+            color: var(--text-muted);
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            font-size: 0.92rem;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #ffb800;
+            color: var(--accent-gold);
         }
 
         .nav-btn {
-            background: #ffb800;
-            color: #0b0f19 !important;
-            padding: 8px 18px;
-            border-radius: 6px;
+            background: linear-gradient(135deg, var(--accent-gold), #eab308);
+            color: #000 !important;
+            padding: 10px 20px;
+            border-radius: 30px;
             font-weight: 700 !important;
-            transition: transform 0.2s, background 0.2s !important;
+            box-shadow: 0 4px 15px var(--accent-glow);
+            transition: all 0.3s ease !important;
         }
 
         .nav-btn:hover {
-            background: #e0a200;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
         }
 
         /* HERO SECTION */
         .hero {
-            display: flex;
+            padding: 90px 8% 60px 8%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
             align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            background: radial-gradient(circle at top right, #1e293b, #0b0f19);
-            min-height: 80vh;
-        }
-
-        .hero-content {
-            flex: 1 1 500px;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 184, 0, 0.1);
-            border: 1px solid rgba(255, 184, 0, 0.3);
-            color: #ffb800;
-            padding: 6px 14px;
-            border-radius: 20px;
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 15px;
+            font-size: 3.4rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .hero h1 span {
-            color: #ffb800;
+            background: linear-gradient(135deg, #ffc107, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 30px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            max-width: 540px;
         }
 
-        .hero-buttons {
+        .hero-cta {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 8px;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
             font-weight: 600;
             font-size: 0.95rem;
+            text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
         }
 
-        .btn-primary {
-            background-color: #ffb800;
-            color: #0b0f19;
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: #000;
+            box-shadow: 0 8px 25px var(--accent-glow);
         }
 
-        .btn-primary:hover {
-            background-color: #e0a200;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 184, 0, 0.2);
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 193, 7, 0.4);
         }
 
-        .btn-secondary {
-            background-color: #1e293b;
-            color: #e2e8f0;
-            border: 1px solid #334155;
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid var(--border-line);
+            backdrop-filter: blur(10px);
         }
 
-        .btn-secondary:hover {
-            background-color: #334155;
-            transform: translateY(-2px);
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
 
-        .hero-image {
-            flex: 1 1 400px;
-            max-width: 480px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        .hero-img-wrapper {
+            position: relative;
         }
 
-        .hero-image img {
+        .hero-card-img {
             width: 100%;
-            height: 380px;
+            height: 420px;
             object-fit: cover;
+            border-radius: 24px;
+            border: 1px solid var(--border-line);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: rgba(18, 26, 43, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glow);
+            padding: 16px 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .exp-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+
+        .exp-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.3;
         }
 
         /* SECTION HEADINGS */
-        .section-header {
+        section {
+            padding: 80px 8%;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
             text-align: center;
             max-width: 650px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 55px auto;
         }
 
-        .section-header small {
-            color: #ffb800;
+        .section-title small {
+            color: var(--accent-gold);
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             font-size: 0.8rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: #ffffff;
-            margin: 8px 0;
-        }
-
-        .section-header p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-        }
-
-        /* GRID CARDS */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #161e2e;
-            border: 1px solid #232d3f;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 184, 0, 0.4);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-body h3 {
-            color: #ffb800;
-            font-size: 1.2rem;
+            display: block;
             margin-bottom: 8px;
         }
 
-        .card-body p {
-            color: #94a3b8;
+        .section-title h2 {
+            font-size: 2.3rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* GRID CARDS & GALLERY */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 28px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-line);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            background: var(--bg-card-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
 
-        /* SERVICES SECTION */
-        .services-bg {
-            background-color: #0f172a;
-            border-top: 1px solid #1e293b;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .service-card {
-            background: #161e2e;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #232d3f;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            border-color: #ffb800;
-            transform: translateY(-4px);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 184, 0, 0.1);
-            color: #ffb800;
-            border-radius: 10px;
+        /* SERVICES GRID */
+        .service-icon-box {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--accent-gold);
             font-size: 1.3rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .service-card h3 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* MAP & CONTACT */
-        .contact-wrapper {
+        /* FORM & LOCATION SECTION */
+        .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: start;
         }
 
-        .map-frame {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            height: 380px;
-        }
-
-        /* FORM STYLES */
-        .form-container {
-            background: #161e2e;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #232d3f;
+        .form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-line);
+            border-radius: 24px;
+            padding: 35px;
+            backdrop-filter: blur(12px);
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
-            color: #cbd5e1;
-            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
             font-weight: 500;
         }
 
-        .form-control {
+        .form-input {
             width: 100%;
-            padding: 12px;
-            background: #0b0f19;
-            border: 1px solid #334155;
-            border-radius: 6px;
-            color: #ffffff;
+            padding: 14px 16px;
+            background: rgba(6, 9, 19, 0.6);
+            border: 1px solid var(--border-line);
+            border-radius: 10px;
+            color: #fff;
             font-family: inherit;
             font-size: 0.95rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
-        .form-control:focus {
+        .form-input:focus {
             outline: none;
-            border-color: #ffb800;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.15);
         }
 
-        /* TERMS & REVIEWS */
-        .terms-box {
-            background: #161e2e;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #232d3f;
+        .map-box {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-line);
+            height: 100%;
+            min-height: 420px;
         }
 
-        .terms-box ul {
-            list-style: none;
+        /* FLOATING ACTION BAR FOR MOBILE */
+        .floating-actions {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(18, 26, 43, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glow);
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 999;
         }
 
-        .terms-box li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 15px;
-            color: #94a3b8;
+        .float-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
         }
 
-        .terms-box li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #ffb800;
-            font-weight: bold;
-        }
-
-        .terms-box strong {
-            color: #ffffff;
+        .float-btn-gold {
+            color: var(--accent-gold);
         }
 
         /* FOOTER */
         footer {
-            background: #070a10;
-            padding: 40px 7% 20px 7%;
-            border-top: 1px solid #1e293b;
+            border-top: 1px solid var(--border-line);
+            padding: 40px 8% 30px 8%;
             text-align: center;
+            background: #04060d;
         }
 
-        .review-badge {
-            background: #161e2e;
+        .rating-chip {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 24px;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-line);
+            padding: 8px 20px;
             border-radius: 30px;
-            border: 1px solid #232d3f;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
 
-        .rating-stars {
-            color: #ffb800;
-        }
-
-        .footer-copy {
-            color: #64748b;
-            font-size: 0.85rem;
+        .stars {
+            color: var(--accent-gold);
         }
 
         /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+        @media (max-width: 992px) {
             .hero {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 text-align: center;
+                padding-top: 50px;
             }
-            .hero-buttons {
+            .hero p {
+                margin: 0 auto 30px auto;
+            }
+            .hero-cta {
                 justify-content: center;
             }
-            .hero-badge {
-                margin: 0 auto 20px auto;
+            .experience-badge {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none; /* Mobile menu can be simplified */
             }
         }
     </style>
 </head>
 <body>
 
+    <div class="glow-sphere-1"></div>
+    <div class="glow-sphere-2"></div>
+
     <!-- HEADER -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-bolt"></i> EXCEL ELECTRICALS
+            <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+            <span class="logo-text">EXCEL ELECTRICALS</span>
         </div>
         <nav>
             <a href="#home">Home</a>
@@ -470,208 +516,149 @@
             <a href="#winding">Winding</a>
             <a href="#services">Services</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
             <a href="#request" class="nav-btn">Service Request</a>
         </nav>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="hero-content">
+        <div>
             <div class="hero-badge">
-                <i class="fa-solid fa-certificate"></i> Verified Electrical Workshop
+                <i class="fa-solid fa-shield-halved"></i> Certified Motor Workshop • Choondy
             </div>
-            <h1>ELECTRIC MOTOR <span>WINDING & REPAIR</span></h1>
-            <p>Professional motor winding, stator rewinding, rotor servicing, and electrical component replacement in Choondy, Aluva.</p>
-            <div class="hero-buttons">
-                <a href="tel:+919876543210" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
-                <a href="https://wa.me/919876543210" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                <a href="mailto:info@excelelectricals.co.in" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Email</a>
+            <h1>EXPERT ELECTRIC MOTOR <span>WINDING & REPAIR</span></h1>
+            <p>High-precision stator rewinding, rotor balancing, coil modifications, and mechanical overhaul for single & three-phase motors.</p>
+            <div class="hero-cta">
+                <a href="tel:+919876543210" class="btn btn-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
+                <a href="https://wa.me/919876543210" class="btn btn-glass"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="25 Hp.jpg" alt="Motor Winding Workshop">
+        <div class="hero-img-wrapper">
+            <img src="25 Hp.jpg" alt="Industrial Motor Winding Workshop" class="hero-card-img">
+            <div class="experience-badge">
+                <div class="exp-num">100%</div>
+                <div class="exp-text">Quality Copper Winding<br>& Testing Assured</div>
+            </div>
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
+    <!-- MOTOR GALLERY -->
     <section id="motors">
-        <div class="section-header">
-            <small>Electric Motor Repairs</small>
-            <h2>Motor Work Gallery</h2>
-            <p>Electric motors, stators, rotors, and components serviced at our workshop.</p>
+        <div class="section-title">
+            <small>Precision Work</small>
+            <h2>Motor Repair Gallery</h2>
         </div>
-        <div class="grid-container">
-            <div class="card">
-                <img src="Inducton motor.webp" alt="Induction Motor Repair">
-                <div class="card-body">
-                    <h3>Induction Motor</h3>
-                    <p>Complete motor repair and electrical maintenance.</p>
+        <div class="cards-grid">
+            <div class="glass-card">
+                <img src="Inducton motor.webp" alt="Induction Motor">
+                <div class="card-content">
+                    <h3>Induction Motors</h3>
+                    <p>Complete overhaul and insulation test for heavy induction motors.</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="Motor.webp" alt="Electric Motor Service">
-                <div class="card-body">
-                    <h3>Motor Overhaul</h3>
-                    <p>Dismantling, inspection, testing, and mechanical overhaul.</p>
+            <div class="glass-card">
+                <img src="Motor.webp" alt="Motor Overhaul">
+                <div class="card-content">
+                    <h3>Mechanical Overhaul</h3>
+                    <p>Bearing replacements, shaft polishing, and housing re-alignment.</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="Field Winding.webp" alt="Field Winding Stator">
-                <div class="card-body">
-                    <h3>Field Winding</h3>
-                    <p>Stator coil rewinding with high-quality insulation materials.</p>
+            <div class="glass-card">
+                <img src="Field Winding.webp" alt="Field Stator Winding">
+                <div class="card-content">
+                    <h3>Stator Coil Winding</h3>
+                    <p>High-grade dual-coated copper wire rewinding for maximum heat capacity.</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="repair motor.webp" alt="Motor Components Repair">
-                <div class="card-body">
-                    <h3>Component Fitting</h3>
-                    <p>Rotor balancing, bearing replacements, and housing repairs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- WINDING SECTION -->
-    <section id="winding" style="background-color: #0f172a;">
-        <div class="section-header">
-            <small>Winding & Rewinding</small>
-            <h2>Specialized Winding Services</h2>
-            <p>High-grade copper wire rewinding for single-phase and three-phase motors.</p>
-        </div>
-        <div class="grid-container">
-            <div class="card">
-                <img src="Field Winding.webp" alt="Stator Winding Work">
-                <div class="card-body">
-                    <h3>Stator Rewinding</h3>
-                    <p>Precision coil insertion, varnishing, and heating treatment.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="Ex Rotor winding.webp" alt="Rotor Rewinding Work">
-                <div class="card-body">
-                    <h3>Rotor Winding</h3>
-                    <p>Expert slip ring and armature rotor rewinding and electrical testing.</p>
+            <div class="glass-card">
+                <img src="repair motor.webp" alt="Motor Repair Parts">
+                <div class="card-content">
+                    <h3>Rotor & Components</h3>
+                    <p>Dynamic rotor check, terminal replacement, and capacitor upgrading.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="services-bg" id="services">
-        <div class="section-header">
-            <small>Our Capabilities</small>
+    <section id="services" style="background: rgba(255,255,255,0.01);">
+        <div class="section-title">
+            <small>What We Do</small>
             <h2>Workshop Services</h2>
-            <p>Comprehensive electrical and mechanical repair solutions under one roof.</p>
         </div>
-        <div class="grid-container">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Motor Winding</h3>
-                <p>Complete coil rewinding for long-lasting high efficiency and heat resistance.</p>
+        <div class="cards-grid">
+            <div class="glass-card card-content">
+                <div class="service-icon-box"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h3>Copper Rewinding</h3>
+                <p>Complete stator and armature rewinding using top-grade insulation paper and high-temp varnish.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                <h3>Motor Repair</h3>
-                <p>Full troubleshooting, electrical fault finding, and overhaul repairs.</p>
+            <div class="glass-card card-content">
+                <div class="service-icon-box"><i class="fa-solid fa-wrench"></i></div>
+                <h3>Complete Diagnostics</h3>
+                <p>Electrical fault diagnosis, megger insulation test, and phase imbalance troubleshooting.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-compact-disc"></i></div>
+            <div class="glass-card card-content">
+                <div class="service-icon-box"><i class="fa-solid fa-gear"></i></div>
                 <h3>Bearing Replacement</h3>
-                <p>Precision bearing extraction and fitting for quiet motor operation.</p>
+                <p>Precision removal and installation of original SKF / NBC brand high-speed motor bearings.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
-                <h3>Capacitor Testing</h3>
-                <p>Run and start capacitor testing and replacement with genuine parts.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
-                <h3>Stator & Core Cleaning</h3>
-                <p>Core re-varnishing, chemical washing, and insulation dipping.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
-                <h3>Spare Parts Fitting</h3>
-                <p>Cooling fan blades, terminal blocks, end covers, and shaft repairs.</p>
+            <div class="glass-card card-content">
+                <div class="service-icon-box"><i class="fa-solid fa-car-battery"></i></div>
+                <h3>Capacitor & Relay Service</h3>
+                <p>Testing and replacement of start/run capacitors, centrifugal switches, and overload relays.</p>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT & LOCATION SECTION -->
-    <section id="about">
-        <div class="contact-wrapper">
-            <div>
-                <div class="section-header" style="text-align: left; margin-bottom: 20px;">
-                    <small>About Workshop</small>
-                    <h2>Excel Electricals</h2>
-                </div>
-                <p style="color: #94a3b8; margin-bottom: 20px;">Located in Choondy, Aluva, Excel Electricals is a trusted workshop specializing in high-quality electric motor repair, stator rewinding, rotor servicing, and electrical component repairs.</p>
-                <p style="color: #94a3b8; margin-bottom: 20px;"><i class="fa-solid fa-location-dot" style="color: #ffb800;"></i> Choondy, Aluva, Ernakulam, Kerala</p>
+    <!-- SERVICE REQUEST FORM & LOCATION -->
+    <section id="request">
+        <div class="section-title">
+            <small>Get In Touch</small>
+            <h2>Service Request & Location</h2>
+        </div>
+        <div class="contact-container">
+            <div class="form-card">
+                <form id="directMsgForm">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" class="form-input" placeholder="e.g. Rahul Nair" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="e.g. 9876543210" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Motor Issue / Equipment Details</label>
+                        <textarea name="message" rows="4" class="form-input" placeholder="Describe the motor type (HP, Single/Three Phase) or problem..." required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-gold" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-paper-plane"></i> Submit Request
+                    </button>
+                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-size: 0.9rem;"></div>
+                </form>
             </div>
-            <div class="map-frame">
+            <div class="map-box">
                 <iframe src="https://maps.google.com/maps?q=Excel%20Electricals,%20Choondy,%20Aluva&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- SERVICE REQUEST FORM -->
-    <section id="request" style="background-color: #0f172a;">
-        <div class="section-header">
-            <small>Direct Contact</small>
-            <h2>Request A Service</h2>
-            <p>Send your motor issue details directly to our team.</p>
-        </div>
-        <div class="form-container" style="max-width: 600px; margin: 0 auto;">
-            <form id="directMsgForm">
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-                
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" class="form-control" placeholder="Enter mobile number" required>
-                </div>
-                <div class="form-group">
-                    <label>Motor / Repair Details</label>
-                    <textarea name="message" rows="4" class="form-control" placeholder="Describe motor type (e.g., 3HP Induction, Single Phase, Pump)" required></textarea>
-                </div>
-                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                    <i class="fa-solid fa-paper-plane"></i> Send Request
-                </button>
-                <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 600;"></div>
-            </form>
-        </div>
-    </section>
-
-    <!-- TERMS & CONDITIONS -->
-    <section id="terms">
-        <div class="section-header">
-            <small>Policies</small>
-            <h2>Terms & Conditions</h2>
-        </div>
-        <div class="terms-box" style="max-width: 800px; margin: 0 auto;">
-            <ul>
-                <li><strong>Inspection & Estimates:</strong> Initial diagnosis is provided upon receipt at our workshop. Final service charges depend on wire gauge, copper weight, and replacement parts.</li>
-                <li><strong>Warranty:</strong> Rewinding carries a limited service warranty on manufacturing defects in copper/insulation work. Damage from phase loss, voltage fluctuation, dry running, or water entry is excluded.</li>
-                <li><strong>Collection:</strong> Repaired motors should be collected within 30 days of completion notification.</li>
-            </ul>
-        </div>
-    </section>
+    <!-- FLOATING QUICK ACTIONS BAR -->
+    <div class="floating-actions">
+        <a href="tel:+919876543210" class="float-btn float-btn-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
+        <span style="color: var(--border-line);">|</span>
+        <a href="https://wa.me/919876543210" class="float-btn"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
+    </div>
 
     <!-- FOOTER -->
     <footer>
-        <div class="review-badge">
-            <span style="font-weight: 700; color: #fff;">4.9</span>
-            <span class="rating-stars">★★★★★</span>
-            <span style="color: #94a3b8; font-size: 0.85rem;">Google Verified Reviews</span>
+        <div class="rating-chip">
+            <span style="font-weight: 700; color: #fff;">4.9 Rating</span>
+            <span class="stars">★★★★★</span>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Google Verified</span>
         </div>
-        <div class="footer-copy">
-            <p>&copy; 2026 EXCEL ELECTRICALS | GSTIN: 32AAGPX3837Q1ZZ</p>
-        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
     <!-- Form Handler Script -->
@@ -682,7 +669,7 @@
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
 
             const formData = new FormData(form);
@@ -700,19 +687,19 @@
                 if (response.status === 200) {
                     statusDiv.style.display = "block";
                     statusDiv.style.color = "#22c55e";
-                    statusDiv.innerText = "✔️ Service request submitted successfully!";
+                    statusDiv.innerText = "✔️ Your request has been sent! We will contact you back shortly.";
                     form.reset();
                 } else {
                     statusDiv.style.display = "block";
                     statusDiv.style.color = "#ef4444";
-                    statusDiv.innerText = "✖️ " + (result.message || "Submission failed.");
+                    statusDiv.innerText = "✖️ " + (result.message || "Failed to submit.");
                 }
             } catch (error) {
                 statusDiv.style.display = "block";
                 statusDiv.style.color = "#ef4444";
-                statusDiv.innerText = "✖️ Error sending message. Please try calling directly.";
+                statusDiv.innerText = "✖️ Error submitting request. Please call directly.";
             } finally {
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Request';
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Request';
                 submitBtn.disabled = false;
             }
         });
